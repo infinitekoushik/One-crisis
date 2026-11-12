@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONE — The crisis the world isn't talking about.</title>
+<meta name="description" content="Every 24 hours, ONE surfaces the world's most ignored crisis. Real data. Real lives. No noise.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#060606;--white:#edeae3;--red:#e8352a;
+  --muted:#3d3d3d;--border:rgba(237,234,227,0.06);
+  --serif:Georgia,'Times New Roman',serif;
+  --mono:'Courier New',Courier,monospace;
+  --sans:system-ui,-apple-system,sans-serif;
+}
+html,body{height:100%;background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{display:flex;flex-direction:column;min-height:100vh}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:var(--black)}
+.logo-wrap{text-decoration:none;display:flex;flex-direction:column;gap:2px}
+.logo{font-family:var(--serif);font-size:1.5rem;font-weight:normal;color:var(--white);line-height:1}
+.logo-sub{font-family:var(--mono);font-size:0.48rem;letter-spacing:0.22em;color:var(--red)}
+.live-pill{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--red);animation:breathe 2.2s ease-in-out infinite}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(232,53,42,0.7)}50%{box-shadow:0 0 0 9px rgba(232,53,42,0)}}
+
+.number-section{max-width:1100px;margin:0 auto;width:100%;padding:3rem 2.5rem 0;display:flex;align-items:baseline;gap:1.5rem}
+.crisis-number{font-family:var(--mono);font-size:clamp(3rem,9vw,6.5rem);font-weight:normal;color:rgba(237,234,227,0.05);letter-spacing:0.08em;line-height:1;user-select:none}
+.crisis-number-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;color:var(--red);padding-bottom:0.5rem}
+
+.hero{padding:1.25rem 2.5rem 2rem;max-width:1100px;margin:0 auto;width:100%}
+.headline{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.4rem);font-weight:normal;line-height:1.18;color:var(--white);max-width:800px;margin-bottom:1.5rem}
+.subhead{font-family:var(--sans);font-size:0.92rem;line-height:1.9;color:rgba(237,234,227,0.44);max-width:540px}
+
+.globe-section{width:100%;max-width:1100px;margin:2rem auto 0;padding:0 2.5rem}
+.globe-outer{position:relative;border:1px solid var(--border);overflow:hidden;height:480px;background:#000008;cursor:grab}
+.globe-outer:active{cursor:grabbing}
+.gui-tl{position:absolute;top:14px;left:18px;font-family:var(--mono);font-size:0.55rem;letter-spacing:0.16em;color:rgba(237,234,227,0.45);z-index:5;pointer-events:none;line-height:2}
+.gui-br{position:absolute;bottom:14px;right:18px;font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:rgba(237,234,227,0.25);z-index:5;pointer-events:none}
+.gui-hint{position:absolute;bottom:14px;left:18px;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;color:rgba(237,234,227,0.14);z-index:5;pointer-events:none}
+.crisis-floatlabel{position:absolute;z-index:8;pointer-events:none;top:34%;left:53%;background:rgba(232,53,42,0.1);border:1px solid rgba(232,53,42,0.35);font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--red);padding:5px 12px;display:flex;align-items:center;gap:7px;opacity:0;animation:fadeLabel 0.8s 3.5s forwards}
+.crisis-floatlabel::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;animation:breathe 2s ease-in-out infinite}
+@keyframes fadeLabel{to{opacity:1}}
+#gc{position:absolute;inset:0;width:100%!important;height:100%!important}
+
+.globe-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:6;background:#000008;transition:opacity 1s ease;pointer-events:none}
+.globe-loading.hidden{opacity:0}
+.loading-ring{width:32px;height:32px;border:1px solid rgba(237,234,227,0.08);border-top-color:var(--red);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;color:var(--muted)}
+
+.stats-section{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.stat{padding:2rem 1.75rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stat-num{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:normal;color:var(--white);line-height:1;margin-bottom:0.5rem}
+.stat-num.red{color:var(--red)}
+.stat-desc{font-family:var(--sans);font-size:0.72rem;color:rgba(237,234,227,0.32);line-height:1.55;max-width:180px}
+
+.brief-section{max-width:1100px;margin:0 auto;padding:3rem 2.5rem;display:grid;grid-template-columns:130px 1fr;gap:3rem;border-top:1px solid var(--border)}
+.brief-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;color:var(--muted);padding-top:3px}
+.brief-body{font-family:var(--sans);font-size:0.9rem;line-height:1.95;color:rgba(237,234,227,0.5)}
+.brief-body p+p{margin-top:1.1rem}
+.brief-body strong{color:var(--white);font-weight:500}
+
+.sources{max-width:1100px;margin:0 auto;padding:1.1rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.sources-label{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.16em;color:var(--muted)}
+.source-link{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.08em;color:rgba(237,234,227,0.18);text-decoration:none;border-bottom:1px solid rgba(237,234,227,0.06);transition:color 0.15s,border-color 0.15s}
+.source-link:hover{color:var(--white);border-bottom-color:rgba(237,234,227,0.4)}
+
+.actions-section{max-width:1100px;margin:0 auto;padding:2rem 2.5rem 3rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.btn-share{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.18em;background:var(--red);color:#fff;border:none;padding:0.9rem 2rem;cursor:pointer;transition:background 0.15s,transform 0.1s}
+.btn-share:hover{background:#c42d23}
+.btn-share:active{transform:scale(0.97)}
+.btn-x{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;background:none;color:rgba(237,234,227,0.35);border:1px solid rgba(237,234,227,0.1);padding:0.9rem 1.5rem;cursor:pointer;text-decoration:none;display:inline-block;transition:color 0.15s,border-color 0.15s}
+.btn-x:hover{color:var(--white);border-color:rgba(237,234,227,0.3)}
+.btn-archive{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:rgba(237,234,227,0.2);background:none;border:none;cursor:pointer;border-bottom:1px solid rgba(237,234,227,0.06);padding-bottom:1px;transition:color 0.15s}
+.btn-archive:hover{color:rgba(237,234,227,0.55)}
+
+.archive-section{max-width:1100px;margin:0 auto;padding:2.5rem 2.5rem 3rem;border-top:1px solid var(--border);display:none}
+.archive-section.open{display:block}
+.archive-title{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.18em;color:var(--muted);margin-bottom:1.5rem}
+.archive-empty{font-family:var(--serif);font-size:1.3rem;font-weight:normal;color:rgba(237,234,227,0.1);line-height:1.7}
+
+.bottombar{margin-top:auto;padding:1rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.countdown-wrap{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;color:var(--muted)}
+.countdown-wrap span{color:var(--white)}
+.mission{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;color:rgba(237,234,227,0.1)}
+
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(60px);background:var(--white);color:var(--black);font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;padding:0.7rem 1.5rem;opacity:0;transition:transform 0.25s ease,opacity 0.25s ease;pointer-events:none;white-space:nowrap;z-index:999}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:700px){
+  .topbar,.number-section,.hero,.globe-section,.stats-section,.brief-section,.sources,.actions-section,.archive-section,.bottombar{padding-left:1.25rem;padding-right:1.25rem}
+  .crisis-number{font-size:3rem}.headline{font-size:1.75rem}
+  .stats-section{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){grid-column:1/-1}
+  .brief-section{grid-template-columns:1fr;gap:1rem}
+  .brief-label,.mission{display:none}
+  .globe-outer{height:300px}
+  .crisis-floatlabel{top:28%;left:46%;font-size:0.45rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .pulse,.crisis-floatlabel,.loading-ring{animation:none;opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="logo-wrap">
+    <span class="logo">ONE</span>
+    <span class="logo-sub">ONECRISIS.EARTH</span>
+  </a>
+  <div class="live-pill">
+    <div class="pulse"></div>
+    NEXT IN <span id="cd-top" style="color:var(--white);margin-left:5px">—</span>
+  </div>
+</header>
+
+<div class="number-section reveal">
+  <div class="crisis-number">#0000001</div>
+  <div class="crisis-number-label">FIRST CRISIS ON RECORD</div>
+</div>
+
+<section class="hero reveal">
+  <h1 class="headline">11.4 million people driven from their homes in Sudan.<br>The world has already moved on.</h1>
+  <p class="subhead">North Darfur, Sudan. Famine declared by the UN. Over 150,000 dead. Aid blocked. The cameras left after three weeks. The people didn't get to leave with them.</p>
+</section>
+
+<div class="globe-section reveal">
+  <div class="globe-outer" id="globe-outer">
+    <div class="globe-loading" id="gloading">
+      <div class="loading-ring"></div>
+      <div class="loading-text">LOADING EARTH</div>
+    </div>
+    <canvas id="gc"></canvas>
+    <div class="gui-tl">LIVE CRISIS LOCATION<br><span style="color:var(--red)">● NORTH DARFUR, SUDAN</span></div>
+    <div class="gui-br">15.0°N · 25.0°E · SUDAN</div>
+    <div class="gui-hint">drag to rotate · scroll to zoom</div>
+    <div class="crisis-floatlabel">NORTH DARFUR · SUDAN</div>
+  </div>
+</div>
+
+<div class="stats-section reveal">
+  <div class="stat"><div class="stat-num red">11.4M</div><div class="stat-desc">people displaced — the largest crisis on earth right now</div></div>
+  <div class="stat"><div class="stat-num">150K+</div><div class="stat-desc">estimated deaths since conflict began April 2023</div></div>
+  <div class="stat"><div class="stat-num red" id="days-count">—</div><div class="stat-desc">days since international media largely stopped covering this</div></div>
+</div>
+
+<div class="brief-section reveal">
+  <div class="brief-label">FULL BRIEF</div>
+  <div class="brief-body">
+    <p>In April 2023, fighting broke out between Sudan's military and the Rapid Support Forces paramilitary group. Within months it became the world's fastest-growing displacement crisis, pushing over 11 million people from their homes.</p>
+    <p><strong>North Darfur is the epicentre.</strong> El Fasher, its capital, remains under siege. Aid convoys are blocked. Hospitals have been shelled. The UN has officially declared famine in multiple regions — the first such declaration anywhere in the world since Somalia in 2011.</p>
+    <p>International news covered the story for about three weeks. Then other headlines came. The people of North Darfur did not get to leave with the cameras.</p>
+  </div>
+</div>
+
+<div class="sources reveal">
+  <span class="sources-label">VERIFIED SOURCES</span>
+  <a class="source-link" href="https://reliefweb.int" target="_blank" rel="noopener">ReliefWeb / OCHA</a>
+  <a class="source-link" href="https://acleddata.com" target="_blank" rel="noopener">ACLED</a>
+  <a class="source-link" href="https://www.unhcr.org" target="_blank" rel="noopener">UNHCR</a>
+  <a class="source-link" href="https://www.wfp.org" target="_blank" rel="noopener">WFP</a>
+  <a class="source-link" href="https://gdeltproject.org" target="_blank" rel="noopener">GDELT</a>
+</div>
+
+<div class="actions-section reveal">
+  <button class="btn-share" id="shareBtn">SHARE THIS CRISIS</button>
+  <a class="btn-x" id="tweetBtn" href="#" target="_blank" rel="noopener">POST ON X</a>
+  <button class="btn-archive" onclick="toggleArchive()">PAST CRISES ↓</button>
+</div>
+
+<div class="archive-section" id="archive">
+  <div class="archive-title">CRISIS ARCHIVE</div>
+  <p class="archive-empty">This is crisis #0000001.<br>The archive grows every 24 hours.<br>Come back tomorrow.</p>
+</div>
+
+<footer class="bottombar">
+  <div class="countdown-wrap">Next crisis in <span id="cd-bottom">—</span></div>
+  <div class="mission">one crisis · every day · for everyone on earth</div>
+</footer>
+<div class="toast" id="toast">Link copied — share it.</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+
+// DATE & DAYS
+const now = new Date();
+const dEl = document.getElementById('days-count');
+if(dEl) dEl.textContent = Math.floor((now-new Date('2023-05-06'))/86400000).toLocaleString();
+
+// COUNTDOWN
+function tick(){
+  const n=new Date(),mid=new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()+1));
+  const d=mid-n,str=[Math.floor(d/3600000),Math.floor((d%3600000)/60000),Math.floor((d%60000)/1000)].map(v=>String(v).padStart(2,'0')).join(':');
+  ['cd-top','cd-bottom'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=str;});
+}
+tick();setInterval(tick,1000);
+
+// SHARE
+const SITE='https://onecrisis.earth';
+const MSG='RIGHT NOW: 11.4 million people displaced in North Darfur, Sudan. The world moved on. Don\'t. → '+SITE;
+const tb=document.getElementById('tweetBtn');
+if(tb)tb.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('11.4M displaced in North Darfur, Sudan. The world moved on. Don\'t. → '+SITE+' #ONE');
+document.getElementById('shareBtn').addEventListener('click',function(){
+  if(navigator.share){navigator.share({title:'ONE',text:MSG,url:SITE}).catch(()=>copy());}else copy();
+});
+function copy(){
+  if(navigator.clipboard){navigator.clipboard.writeText(MSG).then(showToast).catch(legacy);}else legacy();
+}
+function legacy(){
+  const t=document.createElement('textarea');t.value=MSG;t.style.cssText='position:fixed;opacity:0;top:0;left:0';
+  document.body.appendChild(t);t.focus();t.select();try{document.execCommand('copy');showToast();}catch(e){}document.body.removeChild(t);
+}
+function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+window.toggleArchive=function(){
+  const a=document.getElementById('archive');a.classList.toggle('open');
+  document.querySelector('.btn-archive').textContent=a.classList.contains('open')?'PAST CRISES ↑':'PAST CRISES ↓';
+};
+
+// REVEAL
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);revealObs.unobserve(e.target);}});
+},{threshold:0.05});
+document.querySelectorAll('.reveal').forEach(r=>revealObs.observe(r));
+
+// ── GLOBE ──
+if(typeof THREE==='undefined')return;
+const wrap=document.getElementById('globe-outer');
+const canvas=document.getElementById('gc');
+if(!wrap||!canvas)return;
+
+const scene=new THREE.Scene();
+const W=wrap.clientWidth, H=wrap.clientHeight;
+const camera=new THREE.PerspectiveCamera(40,W/H,0.1,100);
+camera.position.z=2.8;
+
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setSize(W,H);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.setClearColor(0x000000,0);
+
+// Real star field
+const sg=new THREE.BufferGeometry();
+const sv=[];
+for(let i=0;i<5000;i++){
+  const t=Math.random()*2*Math.PI,p=Math.acos(2*Math.random()-1),r=40+Math.random()*20;
+  sv.push(r*Math.sin(p)*Math.cos(t),r*Math.sin(p)*Math.sin(t),r*Math.cos(p));
+}
+sg.setAttribute('position',new THREE.Float32BufferAttribute(sv,3));
+const stars=new THREE.Points(sg,new THREE.PointsMaterial({
+  color:0xffffff,size:0.06,transparent:true,opacity:0.7,
+  sizeAttenuation:true
+}));
+scene.add(stars);
+
+// Lights — sun angle from the right
+scene.add(new THREE.AmbientLight(0x223355,0.5));
+const sun=new THREE.DirectionalLight(0xfff8f0,1.2);
+sun.position.set(5,2,3);
+scene.add(sun);
+const backLight=new THREE.DirectionalLight(0x1a2a44,0.15);
+backLight.position.set(-4,-2,-3);
+scene.add(backLight);
+
+const globeGroup=new THREE.Group();
+scene.add(globeGroup);
+
+// Load real NASA Blue Marble texture from three.js GitHub
+const loader=new THREE.TextureLoader();
+loader.crossOrigin='anonymous';
+
+const loadingEl=document.getElementById('gloading');
+
+function buildGlobe(dayTex, nightTex, cloudTex){
+  const geo=new THREE.SphereGeometry(1,128,128);
+
+  const mat=new THREE.MeshPhongMaterial({
+    map: dayTex,
+    specularMap: dayTex,
+    specular: new THREE.Color(0x1a3a5c),
+    shininess: 25,
+  });
+  const earth=new THREE.Mesh(geo,mat);
+  globeGroup.add(earth);
+
+  // Cloud layer
+  if(cloudTex){
+    const cGeo=new THREE.SphereGeometry(1.005,64,64);
+    const cMat=new THREE.MeshPhongMaterial({
+      map:cloudTex,
+      transparent:true,
+      opacity:0.4,
+      depthWrite:false
+    });
+    const clouds=new THREE.Mesh(cGeo,cMat);
+    globeGroup.add(clouds);
+    // Slow cloud rotation
+    clouds.userData.isCloud=true;
+  }
+
+  // Atmosphere glow
+  const aGeo=new THREE.SphereGeometry(1.025,32,32);
+  const aMat=new THREE.MeshPhongMaterial({
+    color:0x1a4888,
+    transparent:true,
+    opacity:0.12,
+    side:THREE.FrontSide,
+    depthWrite:false
+  });
+  globeGroup.add(new THREE.Mesh(aGeo,aMat));
+
+  // Sudan crisis marker — lat 15°N lon 25°E
+  // Convert to Three.js coords
+  function latLon(lat,lon,r){
+    const phi=(90-lat)*Math.PI/180;
+    const theta=(lon+180)*Math.PI/180;
+    return new THREE.Vector3(
+      -r*Math.sin(phi)*Math.cos(theta),
+       r*Math.cos(phi),
+       r*Math.sin(phi)*Math.sin(theta)
+    );
+  }
+
+  const sudanPos = latLon(15, 25, 1.01);
+
+  // Glowing dot
+  const dotGeo=new THREE.SphereGeometry(0.016,16,16);
+  const dotMat=new THREE.MeshBasicMaterial({color:0xff3322});
+  const dot=new THREE.Mesh(dotGeo,dotMat);
+  dot.position.copy(sudanPos);
+  globeGroup.add(dot);
+
+  // Inner ring
+  const r1Geo=new THREE.RingGeometry(0.022,0.034,48);
+  const r1Mat=new THREE.MeshBasicMaterial({color:0xe8352a,transparent:true,opacity:0.9,side:THREE.DoubleSide});
+  const r1=new THREE.Mesh(r1Geo,r1Mat);
+  r1.position.copy(sudanPos);
+  r1.lookAt(new THREE.Vector3(0,0,0));
+  r1.rotateX(Math.PI/2);
+  globeGroup.add(r1);
+
+  // Outer pulse ring
+  const r2Geo=new THREE.RingGeometry(0.042,0.055,48);
+  const r2Mat=new THREE.MeshBasicMaterial({color:0xe8352a,transparent:true,opacity:0.4,side:THREE.DoubleSide});
+  const r2=new THREE.Mesh(r2Geo,r2Mat);
+  r2.position.copy(sudanPos);
+  r2.lookAt(new THREE.Vector3(0,0,0));
+  r2.rotateX(Math.PI/2);
+  globeGroup.add(r2);
+
+  // Third wide ring
+  const r3Geo=new THREE.RingGeometry(0.062,0.068,48);
+  const r3Mat=new THREE.MeshBasicMaterial({color:0xe8352a,transparent:true,opacity:0.15,side:THREE.DoubleSide});
+  const r3=new THREE.Mesh(r3Geo,r3Mat);
+  r3.position.copy(sudanPos);
+  r3.lookAt(new THREE.Vector3(0,0,0));
+  r3.rotateX(Math.PI/2);
+  globeGroup.add(r3);
+
+  // Orient so Sudan faces viewer on load
+  globeGroup.rotation.y = -25*Math.PI/180;
+  globeGroup.rotation.x =  15*Math.PI/180;
+
+  if(loadingEl) loadingEl.classList.add('hidden');
+
+  return {r2, r3};
+}
+
+let pulseMarkers=null;
+
+// Load textures sequentially
+// day texture → clouds → build
+const DAY_URL   = 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg';
+const CLOUD_URL = 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png';
+
+loader.load(
+  DAY_URL,
+  function(dayTex){
+    dayTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    loader.load(
+      CLOUD_URL,
+      function(cloudTex){
+        pulseMarkers = buildGlobe(dayTex, null, cloudTex);
+      },
+      null,
+      function(){
+        pulseMarkers = buildGlobe(dayTex, null, null);
+      }
+    );
+  },
+  null,
+  function(){
+    // Fallback: high quality procedural texture
+    const S=4096, H2=S/2;
+    const c=document.createElement('canvas');c.width=S;c.height=H2;
+    const ctx=c.getContext('2d');
+
+    // Deep ocean
+    const og=ctx.createLinearGradient(0,0,0,H2);
+    og.addColorStop(0,'#04122b');og.addColorStop(0.5,'#071a38');og.addColorStop(1,'#04122b');
+    ctx.fillStyle=og;ctx.fillRect(0,0,S,H2);
+
+    // Ocean surface shimmer
+    for(let i=0;i<2000;i++){
+      const x=Math.random()*S,y=Math.random()*H2;
+      ctx.fillStyle=`rgba(30,80,140,${Math.random()*0.05})`;
+      ctx.fillRect(x,y,Math.random()*30+5,1);
+    }
+
+    function ll(lat,lon){return[(lon+180)/360*S,(90-lat)/180*H2];}
+
+    function land(pts,col){
+      ctx.fillStyle=col;ctx.strokeStyle='rgba(0,0,0,0.2)';ctx.lineWidth=0.5;
+      ctx.beginPath();let f=true;
+      for(const[a,o]of pts){const[x,y]=ll(a,o);f?ctx.moveTo(x,y):ctx.lineTo(x,y);f=false;}
+      ctx.closePath();ctx.fill();ctx.stroke();
+    }
+
+    const FOREST='#2d4a1e', MIXED='#3a5828', ARID='#8a7a52', DESERT='#c4a96a', ICE='#dce8f0', TUNDRA='#5a6b4a';
+
+    // North America
+    land([[71,-141],[60,-165],[50,-127],[34,-120],[20,-105],[15,-85],[25,-80],[44,-66],[55,-59],[65,-70],[70,-80],[68,-100],[60,-123],[71,-141]],FOREST);
+    land([[30,-117],[20,-105],[15,-85],[25,-80],[30,-117]],ARID);
+    // Greenland
+    land([[83,-44],[82,-20],[75,-19],[72,-23],[73,-38],[76,-58],[80,-60],[83,-44]],ICE);
+    // South America
+    land([[12,-72],[0,-78],[-5,-81],[-20,-70],[-33,-71],[-42,-74],[-55,-68],[-55,-64],[-42,-63],[-23,-43],[-5,-35],[0,-50],[8,-60],[12,-72]],FOREST);
+    land([[-20,-70],[-30,-65],[-33,-71],[-20,-70]],ARID);
+    // Europe
+    land([[71,28],[60,5],[50,2],[38,0],[36,10],[40,18],[54,18],[60,25],[68,18],[71,28]],MIXED);
+    land([[36,-8],[44,-9],[43,-1],[36,0],[36,-8]],ARID);
+    // Africa
+    land([[37,10],[32,32],[22,37],[15,42],[8,44],[1,42],[-2,40],[-10,38],[-17,35],[-26,33],[-34,26],[-34,18],[-26,15],[-20,12],[-10,9],[-5,8],[0,7],[5,2],[10,3],[15,0],[20,5],[22,4],[15,40],[8,44],[15,42],[22,37],[28,34],[32,32],[37,10]],ARID);
+    // Sahara
+    land([[37,10],[20,-17],[15,-17],[5,-5],[0,7],[10,3],[15,0],[20,5],[22,32],[22,37],[28,34],[32,32],[37,10]],DESERT);
+    // Central Africa forest
+    land([[5,10],[5,30],[0,30],[0,10],[5,10]],FOREST);
+    // Horn
+    land([[15,42],[8,44],[10,51],[12,50],[15,42]],ARID);
+    // Sudan CRISIS RED
+    land([[22,32],[22,38],[18,38],[15,38],[12,35],[10,34],[10,24],[12,22],[15,22],[20,22],[22,22],[22,32]],'#8b2020');
+    // Arabia
+    land([[30,48],[25,56],[22,60],[14,48],[12,44],[15,42],[18,38],[22,38],[25,37],[30,35],[32,36],[35,36],[37,37],[37,42],[35,43],[32,44],[30,48]],DESERT);
+    // South Asia
+    land([[28,72],[20,73],[8,77],[10,80],[20,86],[28,85],[30,78],[28,72]],MIXED);
+    // SE Asia
+    land([[20,100],[10,103],[1,104],[-4,105],[5,110],[15,105],[20,100]],FOREST);
+    // Central Asia
+    land([[50,90],[40,75],[38,68],[43,47],[50,65],[50,90]],ARID);
+    // China
+    land([[50,90],[40,108],[30,108],[22,110],[24,114],[38,120],[40,130],[48,100],[50,90]],MIXED);
+    // Russia
+    land([[55,60],[65,65],[70,90],[65,110],[60,142],[55,135],[55,35],[55,60]],TUNDRA);
+    // Australia
+    land([[-15,130],[-20,114],[-34,118],[-38,148],[-28,153],[-15,142],[-12,136],[-15,130]],DESERT);
+    land([[-15,130],[-22,150],[-34,150],[-38,148],[-15,130]],MIXED);
+    // Antarctica
+    land([[-70,-180],[-70,180],[-90,180],[-90,-180],[-70,-180]],ICE);
+    // Japan
+    land([[35,130],[36,138],[35,140],[33,131],[35,130]],MIXED);
+    land([[38,141],[44,145],[44,141],[38,141]],MIXED);
+
+    // Sudan glow
+    const[sx,sy]=ll(15,25);
+    for(const[r,a]of[[40,0.05],[28,0.12],[16,0.25],[8,0.5]]){
+      ctx.beginPath();ctx.arc(sx,sy,r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(232,53,42,${a})`;ctx.fill();
+    }
+    ctx.beginPath();ctx.arc(sx,sy,4,0,Math.PI*2);ctx.fillStyle='#ff4433';ctx.fill();
+
+    // Cloud wisps
+    ctx.globalAlpha=0.08;
+    for(let i=0;i<60;i++){
+      const cx=Math.random()*S,cy=Math.random()*H2;
+      const r=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.random()*80+40);
+      r.addColorStop(0,'white');r.addColorStop(1,'transparent');
+      ctx.fillStyle=r;ctx.fillRect(cx-100,cy-50,200,100);
+    }
+    ctx.globalAlpha=1;
+
+    const tex=new THREE.CanvasTexture(c);
+    tex.anisotropy=renderer.capabilities.getMaxAnisotropy();
+    pulseMarkers=buildGlobe(tex,null,null);
+  }
+);
+
+// Interaction
+let dragging=false,prev={x:0,y:0},vel={x:0,y:0},auto=true,pt=null;
+wrap.addEventListener('mousedown',e=>{dragging=true;auto=false;prev={x:e.clientX,y:e.clientY};vel={x:0,y:0};e.preventDefault();});
+window.addEventListener('mouseup',()=>{dragging=false;setTimeout(()=>{auto=true;},3000);});
+window.addEventListener('mousemove',e=>{
+  if(!dragging)return;
+  vel.y=(e.clientX-prev.x)*0.005;vel.x=(e.clientY-prev.y)*0.005;
+  globeGroup.rotation.y+=vel.y;globeGroup.rotation.x+=vel.x;
+  prev={x:e.clientX,y:e.clientY};
+});
+wrap.addEventListener('touchstart',e=>{pt=e.touches[0];auto=false;vel={x:0,y:0};},{passive:true});
+wrap.addEventListener('touchmove',e=>{
+  if(!pt)return;
+  vel.y=(e.touches[0].clientX-pt.clientX)*0.005;vel.x=(e.touches[0].clientY-pt.clientY)*0.005;
+  globeGroup.rotation.y+=vel.y;globeGroup.rotation.x+=vel.x;pt=e.touches[0];
+},{passive:true});
+wrap.addEventListener('touchend',()=>{pt=null;setTimeout(()=>{auto=true;},3000);});
+wrap.addEventListener('wheel',e=>{
+  camera.position.z=Math.max(1.4,Math.min(4.5,camera.position.z+e.deltaY*0.003));
+  e.preventDefault();
+},{passive:false});
+
+window.addEventListener('resize',()=>{
+  const nW=wrap.clientWidth,nH=wrap.clientHeight;
+  renderer.setSize(nW,nH);camera.aspect=nW/nH;camera.updateProjectionMatrix();
+});
+
+let t=0;
+function animate(){
+  requestAnimationFrame(animate);
+  t+=0.016;
+  if(auto){globeGroup.rotation.y+=0.0008;}
+  else{vel.x*=0.90;vel.y*=0.90;globeGroup.rotation.y+=vel.y;globeGroup.rotation.x+=vel.x;}
+  globeGroup.rotation.x=Math.max(-1.2,Math.min(1.2,globeGroup.rotation.x));
+
+  // Pulse outer rings
+  if(pulseMarkers){
+    const s=1+0.25*Math.sin(t*2.8);
+    pulseMarkers.r2.scale.set(s,s,1);
+    pulseMarkers.r2.material.opacity=0.4*(1.5-Math.abs(Math.sin(t*2.8)));
+    const s2=1+0.15*Math.sin(t*2.8+1);
+    pulseMarkers.r3.scale.set(s2,s2,1);
+    pulseMarkers.r3.material.opacity=0.15*(1.5-Math.abs(Math.sin(t*2.8+1)));
+  }
+
+  // Slowly rotate clouds if present
+  globeGroup.children.forEach(c=>{
+    if(c.userData.isCloud) c.rotation.y+=0.00005;
+  });
+
+  renderer.render(scene,camera);
+}
+animate();
+
+})();
+</script>
+</body>
+</html>
