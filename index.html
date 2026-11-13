@@ -89,7 +89,9 @@ async function highlight(iso){
  const f=world.features.filter(x=>[x.properties.ISO_A3_EH,x.properties.ADM0_A3,x.properties.ISO_A3].includes(iso));
  if(!f.length)return null;
  layer=await Cesium.GeoJsonDataSource.load({type:'FeatureCollection',features:f},{fill:RED.withAlpha(.35),clampToGround:true});
- layer.entities.values.slice().forEach(e=>{if(!e.polygon)return;const p=e.polygon.hierarchy.getValue().positions;
+ const fillA=new Cesium.CallbackProperty(()=>{const h=viewer.camera.positionCartographic.height;
+  return RED.withAlpha(.35*Cesium.Math.clamp((h-250000)/1250000,0,1))},false);
+ layer.entities.values.slice().forEach(e=>{if(!e.polygon)return;e.polygon.material=new Cesium.ColorMaterialProperty(fillA);const p=e.polygon.hierarchy.getValue().positions;
   layer.entities.add({polyline:{positions:p.concat(p[0]),width:2.5,clampToGround:true,material:RED}})});
  viewer.dataSources.add(layer);return layer}
 
