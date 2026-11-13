@@ -7,6 +7,7 @@
     {
       "no": 1,
       "iso3": "SDN",
+      "pin": { "lat": 13.63, "lon": 25.35, "label": "El Fasher" },
       "country": "Sudan",
       "title": "Sudan",
       "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
