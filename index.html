@@ -16,7 +16,7 @@ body{font:16px/1.55 'Iowan Old Style','Palatino Linotype',Georgia,serif}
 button{font:inherit;background:#000;color:#e9e6df;border:1px solid #e9e6df;padding:8px 14px;cursor:pointer}
 button:hover,button:focus-visible{background:#e9e6df;color:#000;outline:none}
 #spot{position:fixed;left:20px;bottom:36px;width:min(440px,calc(100% - 40px));max-height:70vh;overflow:auto;background:rgba(0,0,0,.84);border:1px solid #3a3935;padding:18px}
-#no{font-size:clamp(30px,6vw,56px);line-height:1;color:#f0a93b;font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;letter-spacing:.02em}
+#no{font-size:clamp(30px,6vw,56px);line-height:1;color:#e8262d;font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;letter-spacing:.02em}
 h1{font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 8px}
 #txt{margin:0 0 14px;max-width:62ch}
 .fig{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #3a3935;padding:8px 0}
@@ -33,11 +33,15 @@ td{padding:10px 8px 10px 0;border-bottom:1px solid #3a3935;vertical-align:top}
 tr.row{cursor:pointer}tr.row:hover td{background:#14130f}
 td small{display:block}
 #foot{position:fixed;left:20px;bottom:10px}
+#hint{position:fixed;top:18px;left:50%;transform:translateX(-50%);pointer-events:none;text-align:center;width:min(60vw,520px)}
+#nav{display:flex;gap:8px}
+@media(max-width:700px){#hint{display:none}}
 @media(max-width:600px){#spot{bottom:30px;max-height:55vh}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style></head><body>
 <div id="globe"></div>
-<div id="top"><span class="mono">ONE / onecrisis.earth</span><button id="bt" type="button">Silence Index</button></div>
+<div id="top"><span class="mono">ONE / onecrisis.earth</span><div id="nav"><button id="bi" type="button">Zoom in</button><button id="bo" type="button">Zoom out</button><button id="bh" type="button">Whole earth</button><button id="bt" type="button">Silence Index</button></div></div>
+<div id="hint" class="mono">Drag to rotate. Scroll or use the buttons to zoom. Click any country.</div>
 <section id="spot" aria-live="polite">
  <div id="no">#0000000</div><h1 id="name">Loading</h1><p id="txt"></p>
  <div id="figs"></div><div id="act"></div>
@@ -53,7 +57,7 @@ td small{display:block}
 <script src="https://cdn.jsdelivr.net/npm/cesium@1.124.0/Build/Cesium/Cesium.js"></script>
 <script>
 const WORLD='https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_50m_admin_0_countries.geojson';
-const AMBER=Cesium.Color.fromCssColorString('#f0a93b');
+const RED_CSS='#e8262d',RED=Cesium.Color.fromCssColorString(RED_CSS);
 const $=id=>document.getElementById(id);
 const h=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const safe=u=>/^https:\/\//.test(u||'');
@@ -63,31 +67,62 @@ const viewer=new Cesium.Viewer('globe',{
  baseLayerPicker:false,geocoder:false,homeButton:false,sceneModePicker:false,navigationHelpButton:false,
  animation:false,timeline:false,fullscreenButton:false,infoBox:false,selectionIndicator:false});
 viewer.scene.backgroundColor=Cesium.Color.BLACK;
+let seq=0,world,layer,pin;
 const ctl=viewer.scene.screenSpaceCameraController;
-function release(){viewer.camera.cancelFlight();viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
- ctl.enableInputs=ctl.enableRotate=ctl.enableZoom=ctl.enableTilt=ctl.enableLook=true;
- ctl.minimumZoomDistance=150000;ctl.maximumZoomDistance=4e7}
-['pointerdown','wheel','touchstart'].forEach(e=>viewer.canvas.addEventListener(e,release,{passive:true}));
+function release(){viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+ ctl.enableInputs=ctl.enableRotate=ctl.enableZoom=ctl.enableTilt=ctl.enableLook=ctl.enableTranslate=true;
+ ctl.minimumZoomDistance=1000;ctl.maximumZoomDistance=6e7}
+['pointerdown','wheel','touchstart'].forEach(e=>viewer.canvas.addEventListener(e,()=>{viewer.camera.cancelFlight();seq++},{passive:true}));
 release();
+const flight=o=>new Promise(r=>viewer.camera.flyTo({...o,complete:r,cancel:r}));
+const zoom=k=>{seq++;viewer.camera.cancelFlight();release();const hgt=viewer.camera.positionCartographic.height;k>0?viewer.camera.zoomIn(hgt*.5):viewer.camera.zoomOut(hgt*.8)};
+function home(){seq++;return flight({destination:Cesium.Cartesian3.fromDegrees(30,15,2.4e7),duration:2})}
 
-let world,layer;
+const ring=(r,x,y)=>{let c=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c};
+const poly=(p,x,y)=>ring(p[0],x,y)&&!p.slice(1).some(h=>ring(h,x,y));
+const inside=(g,x,y)=>g.type==='Polygon'?poly(g.coordinates,x,y):g.type==='MultiPolygon'&&g.coordinates.some(p=>poly(p,x,y));
+const iso3=f=>f.properties.ISO_A3_EH!=='-99'&&f.properties.ISO_A3_EH||f.properties.ADM0_A3;
+
 async function highlight(iso){
  if(layer){viewer.dataSources.remove(layer,true);layer=null}
  world=world||await (await fetch(WORLD)).json();
  const f=world.features.filter(x=>[x.properties.ISO_A3_EH,x.properties.ADM0_A3,x.properties.ISO_A3].includes(iso));
  if(!f.length)return null;
- layer=await Cesium.GeoJsonDataSource.load({type:'FeatureCollection',features:f},{fill:AMBER.withAlpha(.3),clampToGround:true});
+ layer=await Cesium.GeoJsonDataSource.load({type:'FeatureCollection',features:f},{fill:RED.withAlpha(.35),clampToGround:true});
  layer.entities.values.slice().forEach(e=>{if(!e.polygon)return;const p=e.polygon.hierarchy.getValue().positions;
-  layer.entities.add({polyline:{positions:p.concat(p[0]),width:2.5,clampToGround:true,material:AMBER}})});
+  layer.entities.add({polyline:{positions:p.concat(p[0]),width:2.5,clampToGround:true,material:RED}})});
  viewer.dataSources.add(layer);return layer}
 
-let seq=0;
+function addPin(lon,lat,label){
+ if(pin)viewer.entities.remove(pin);
+ const cv=document.createElement('canvas');cv.width=14;cv.height=48;const g=cv.getContext('2d');
+ g.fillStyle=RED_CSS;g.fillRect(6,12,2,36);g.fillRect(0,0,14,14);g.strokeStyle='#fff';g.lineWidth=2;g.strokeRect(1,1,12,12);
+ pin=viewer.entities.add({position:Cesium.Cartesian3.fromDegrees(lon,lat,0),
+  billboard:{image:cv,verticalOrigin:Cesium.VerticalOrigin.BOTTOM,disableDepthTestDistance:Number.POSITIVE_INFINITY},
+  label:{text:label,font:'13px Consolas, monospace',fillColor:Cesium.Color.WHITE,showBackground:true,backgroundColor:Cesium.Color.BLACK,
+   horizontalOrigin:Cesium.HorizontalOrigin.LEFT,verticalOrigin:Cesium.VerticalOrigin.BOTTOM,pixelOffset:new Cesium.Cartesian2(12,-34),disableDepthTestDistance:Number.POSITIVE_INFINITY}})}
+
 async function focus(c){
  const me=++seq;fill(c);
- try{const l=await highlight(c.iso3);
-  if(l&&me===seq)await viewer.flyTo(l,{duration:3.5,offset:new Cesium.HeadingPitchRange(0,Cesium.Math.toRadians(-90),0)})}
- catch(e){console.warn('fly-in failed',e)}
+ try{
+  const l=await highlight(c.iso3);
+  if(l&&me===seq){
+   const pts=[];l.entities.values.forEach(e=>{if(e.polygon)pts.push(...e.polygon.hierarchy.getValue().positions)});
+   const r=Cesium.Rectangle.fromCartesianArray(pts),mid=Cesium.Rectangle.center(r);
+   const D=Cesium.Math.toDegrees;
+   addPin(c.pin?c.pin.lon:D(mid.longitude),c.pin?c.pin.lat:D(mid.latitude),c.pin&&c.pin.label||c.country);
+   const w=r.east-r.west,hh=r.north-r.south;
+   r.west-=w*.3;r.east+=w*.3;r.south=Math.max(r.south-hh*.3,-1.5);r.north=Math.min(r.north+hh*.3,1.5);
+   await flight({destination:r,duration:3.5})}
+ }catch(e){console.warn('fly-in failed',e)}
  if(me===seq)release()}
+
+viewer.screenSpaceEventHandler.setInputAction(m=>{
+ const p=viewer.camera.pickEllipsoid(m.position,viewer.scene.globe.ellipsoid);if(!p||!world)return;
+ const cg=Cesium.Cartographic.fromCartesian(p),x=Cesium.Math.toDegrees(cg.longitude),y=Cesium.Math.toDegrees(cg.latitude);
+ const f=world.features.find(q=>inside(q.geometry,x,y));if(!f)return;
+ const c=window.DATA.crises.find(q=>q.iso3===iso3(f));
+ if(c)focus(c);else $('hint').textContent=f.properties.NAME+' is not on the board right now.'},Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
 function fig(label,f){
  const r=h('div','fig'),l=h('div');l.append(h('span',null,label));
@@ -121,6 +156,6 @@ function board(d){
  const c=d.crises.find(x=>x.iso3===d.spotlight)||d.crises[0];
  if(c)focus(c);else{$('name').textContent='No crises loaded'}
 })();
-$('bt').onclick=()=>$('board').hidden=false;$('bx').onclick=()=>$('board').hidden=true;
+$('bi').onclick=()=>zoom(1);$('bo').onclick=()=>zoom(-1);$('bh').onclick=home;$('bt').onclick=()=>$('board').hidden=false;$('bx').onclick=()=>$('board').hidden=true;
 addEventListener('keydown',e=>{if(e.key==='Escape')$('board').hidden=true});
 </script></body></html>
