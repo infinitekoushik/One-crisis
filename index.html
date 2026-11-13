@@ -41,10 +41,11 @@ td small{display:block}
 </style></head><body>
 <div id="globe"></div>
 <div id="top"><span class="mono">ONE / onecrisis.earth</span><div id="nav"><button id="bi" type="button">Zoom in</button><button id="bo" type="button">Zoom out</button><button id="bh" type="button">Whole earth</button><button id="bt" type="button">Silence Index</button></div></div>
-<div id="hint" class="mono">Drag to rotate. Scroll or use the buttons to zoom. Click any country.</div>
+<div id="hint" class="mono">Drag to rotate. Scroll or use the buttons to zoom. Click any red country, or use Next and Previous.</div>
 <section id="spot" aria-live="polite">
  <div id="no">#0000000</div><h1 id="name">Loading</h1><p id="txt"></p>
- <div id="figs"></div><div id="act"></div>
+ <div id="rk" class="mono"></div><div id="figs"></div><div id="act"></div>
+ <div style="display:flex;gap:8px;margin-top:12px"><button id="pv" type="button">Previous</button><button id="nx" type="button">Next</button></div>
 </section>
 <section id="board" hidden>
  <button id="bx" type="button" style="position:fixed;top:16px;right:20px">Close</button>
@@ -67,7 +68,8 @@ const viewer=new Cesium.Viewer('globe',{
  baseLayerPicker:false,geocoder:false,homeButton:false,sceneModePicker:false,navigationHelpButton:false,
  animation:false,timeline:false,fullscreenButton:false,infoBox:false,selectionIndicator:false});
 viewer.scene.backgroundColor=Cesium.Color.BLACK;
-let seq=0,world,layer,pin;
+let seq=0,world,worldP,layer,pin;
+const getWorld=()=>worldP||(worldP=fetch(WORLD).then(r=>r.json()).then(j=>world=j));
 const ctl=viewer.scene.screenSpaceCameraController;
 function release(){viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
  ctl.enableInputs=ctl.enableRotate=ctl.enableZoom=ctl.enableTilt=ctl.enableLook=ctl.enableTranslate=true;
@@ -85,7 +87,7 @@ const iso3=f=>f.properties.ISO_A3_EH!=='-99'&&f.properties.ISO_A3_EH||f.properti
 
 async function highlight(iso){
  if(layer){viewer.dataSources.remove(layer,true);layer=null}
- world=world||await (await fetch(WORLD)).json();
+ await getWorld();
  const f=world.features.filter(x=>[x.properties.ISO_A3_EH,x.properties.ADM0_A3,x.properties.ISO_A3].includes(iso));
  if(!f.length)return null;
  layer=await Cesium.GeoJsonDataSource.load({type:'FeatureCollection',features:f},{fill:RED.withAlpha(.35),clampToGround:true});
@@ -119,6 +121,15 @@ async function focus(c){
  }catch(e){console.warn('fly-in failed',e)}
  if(me===seq)release()}
 
+async function outlineAll(){
+ await getWorld();
+ const set=new Set(window.DATA.crises.map(c=>c.iso3));
+ const f=world.features.filter(x=>set.has(iso3(x)));
+ const ds=await Cesium.GeoJsonDataSource.load({type:'FeatureCollection',features:f},{clampToGround:true});
+ ds.entities.values.slice().forEach(e=>{if(!e.polygon)return;const p=e.polygon.hierarchy.getValue().positions;e.polygon.show=false;
+  ds.entities.add({polyline:{positions:p.concat(p[0]),width:1.2,clampToGround:true,material:RED.withAlpha(.55)}})});
+ await viewer.dataSources.add(ds);viewer.dataSources.lowerToBottom(ds)}
+const step=k=>{const o=window.ORDER;if(!o||!o.length)return;focus(o[(o.indexOf(window.CUR)+k+o.length)%o.length])};
 viewer.screenSpaceEventHandler.setInputAction(m=>{
  const p=viewer.camera.pickEllipsoid(m.position,viewer.scene.globe.ellipsoid);if(!p||!world)return;
  const cg=Cesium.Cartographic.fromCartesian(p),x=Cesium.Math.toDegrees(cg.longitude),y=Cesium.Math.toDegrees(cg.latitude);
@@ -132,9 +143,15 @@ function fig(label,f){
  if(f&&f.value!=null){v.append(h('b',null,f.value));v.append(h('span','mono',f.source+', '+f.date))}
  else v.append(h('span','mono','no data yet'));
  r.append(l,v);return r}
+function autoText(c){const p=[];
+ if(c.need&&c.need.value!=null)p.push('Aid agencies are asking for '+c.need.value.replace(' asked','')+' to help people in '+c.title+' this year.');
+ if(c.gap&&c.gap.value!=null)p.push(c.gap.value.replace('% unfunded','')+' percent of that is still unfunded.');
+ if(c.media&&c.media.value!=null)p.push('News coverage in the last 7 days: '+c.media.value+'.');
+ return p.join(' ')}
 function fill(c){
  $('no').textContent='#'+String(c.no).padStart(7,'0');
- $('name').textContent=c.title||c.country;$('txt').textContent=c.text||'';
+ $('name').textContent=c.title||c.country;window.CUR=c;$('txt').textContent=c.text||autoText(c);
+ const i=(window.ORDER||[]).indexOf(c);$('rk').textContent=i>=0?'Silence rank '+(i+1)+' of '+ORDER.length:'';
  const F=$('figs');F.replaceChildren(fig('Silence score',c.score!=null?{value:c.score+' of 100',source:'ONE method',date:window.DATA.updated}:null),
   fig('Need',c.need),fig('Unfunded',c.gap),fig('News volume, 7 days',c.media));
  const A=$('act');A.replaceChildren();
@@ -144,7 +161,7 @@ function fill(c){
 
 function board(d){
  const rows=$('rows');rows.replaceChildren();
- [...d.crises].sort((a,b)=>(b.score??-1)-(a.score??-1)).forEach((c,i)=>{
+ window.ORDER=[...d.crises].sort((a,b)=>(b.score??-1)-(a.score??-1));ORDER.forEach((c,i)=>{
   const tr=h('tr','row');tr.tabIndex=0;
   const cell=(f)=>{const td=h('td');if(f&&f.value!=null){td.append(h('div',null,f.value),h('small','mono',f.source+', '+f.date))}else td.append(h('span','mono','no data yet'));return td};
   tr.append(h('td','mono',i+1),h('td',null,c.country),h('td',null,c.score!=null?c.score:'-'),cell(c.need),cell(c.gap),cell(c.media));
@@ -154,10 +171,12 @@ function board(d){
  const d=window.DATA=await (await fetch('data.json?'+Date.now())).json();
  $('meth').textContent=d.method||'';
  $('foot').textContent=d.updated?'Data updated '+d.updated+'. Sources: OCHA FTS, GDELT, ReliefWeb. Basemap: Esri.':'Waiting for the first data run. Basemap: Esri.';
- board(d);
+ board(d);outlineAll();
  const c=d.crises.find(x=>x.iso3===d.spotlight)||d.crises[0];
  if(c)focus(c);else{$('name').textContent='No crises loaded'}
 })();
+$('pv').onclick=()=>step(-1);$('nx').onclick=()=>step(1);
+addEventListener('keydown',e=>{if($('board').hidden){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});
 $('bi').onclick=()=>zoom(1);$('bo').onclick=()=>zoom(-1);$('bh').onclick=home;$('bt').onclick=()=>$('board').hidden=false;$('bx').onclick=()=>$('board').hidden=true;
 addEventListener('keydown',e=>{if(e.key==='Escape')$('board').hidden=true});
 </script></body></html>
