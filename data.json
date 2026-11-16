@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-16",
   "method": "Silence score, 0 to 100: 40% how big the need is (OCHA FTS requirements), 30% how much of it is unfunded (OCHA FTS), 30% how little the news covers it (GDELT, 7 days). Each part is ranked against every other crisis on the board. If a figure could not be loaded for a crisis, the score uses the parts we do have.",
-  "spotlight": "COD",
+  "spotlight": "SSD",
   "debug": {
     "skippedRegional": [
       "Sudan Emergency: Regional Refugee Response Plan 2026",
@@ -10,12 +10,12 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Chad%22%20(crisis%20OR%20humanitarian%20OR%20conflict%20OR%20famine)&mode=timelinevolraw&timespan=7d&fo",
-      "HTI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Haiti%22%20(crisis%20OR%20humanitarian%20OR%20conflict%20OR%20famine)&mode=timelinevolraw&timespan=7d&f",
-      "MOZ: fetch failed",
-      "NGA: fetch failed",
-      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%20OR%20Palestine%20OR%20%22West%20Bank%22)%20(crisis%20OR%20humanitarian%20OR%20conflict%20OR%20fami",
-      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mali%22%20(crisis%20OR%20humanitarian%20OR%20conflict%20OR%20famine)&mode=timelinevolraw&timespan=7d&fo"
+      "CMR: fetch failed",
+      "BFA: fetch failed",
+      "TCD: fetch failed",
+      "AFG: fetch failed",
+      "MMR: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mya",
+      "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce"
     ]
   },
   "history": [
@@ -33,38 +33,17 @@
     },
     {
       "date": "2026-11-16",
-      "iso3": "COD"
+      "iso3": "SSD"
     }
   ],
   "crises": [
-    {
-      "no": 2,
-      "iso3": "PSE",
-      "country": "Occupied Palestinian Territory",
-      "title": "Palestine",
-      "text": "",
-      "score": 89,
-      "need": {
-        "value": "$4.06 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "65% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": null,
-      "complete": false,
-      "action": null
-    },
     {
       "no": 3,
       "iso3": "SYR",
       "country": "Syrian Arab Republic",
       "title": "Syria",
       "text": "",
-      "score": 89,
+      "score": 72,
       "need": {
         "value": "$2.92 billion asked",
         "source": "OCHA FTS",
@@ -75,51 +54,35 @@
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
-      "media": null,
-      "complete": false,
+      "media": {
+        "value": "52 mentions",
+        "n": 52,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
       "action": null
     },
     {
-      "no": 1,
-      "iso3": "SDN",
-      "country": "Sudan",
-      "title": "Sudan",
-      "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
-      "score": 72,
-      "need": {
-        "value": "$2.87 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "49% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": null,
-      "complete": false,
-      "action": null
-    },
-    {
-      "no": 5,
-      "iso3": "COD",
-      "country": "Democratic Republic of the Congo",
-      "title": "DR Congo",
+      "no": 8,
+      "iso3": "SSD",
+      "country": "South Sudan",
+      "title": "South Sudan",
       "text": "",
-      "score": 71,
+      "score": 70,
       "need": {
-        "value": "$2.13 billion asked",
+        "value": "$1.46 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "gap": {
-        "value": "47% unfunded",
+        "value": "59% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "media": {
-        "value": "1 mentions",
-        "n": 1,
+        "value": "15 mentions",
+        "n": 15,
         "source": "GDELT",
         "date": "2026-11-16"
       },
@@ -132,7 +95,7 @@
       "country": "Niger",
       "title": "Niger",
       "text": "",
-      "score": 68,
+      "score": 70,
       "need": {
         "value": "$0.68 billion asked",
         "source": "OCHA FTS",
@@ -158,7 +121,7 @@
       "country": "Burkina Faso",
       "title": "Burkina Faso",
       "text": "",
-      "score": 67,
+      "score": 68,
       "need": {
         "value": "$0.66 billion asked",
         "source": "OCHA FTS",
@@ -179,25 +142,25 @@
       "action": null
     },
     {
-      "no": 8,
-      "iso3": "SSD",
-      "country": "South Sudan",
-      "title": "South Sudan",
+      "no": 5,
+      "iso3": "COD",
+      "country": "Democratic Republic of the Congo",
+      "title": "DR Congo",
       "text": "",
-      "score": 67,
+      "score": 68,
       "need": {
-        "value": "$1.46 billion asked",
+        "value": "$2.13 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "gap": {
-        "value": "60% unfunded",
+        "value": "47% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "media": {
-        "value": "15 mentions",
-        "n": 15,
+        "value": "6 mentions",
+        "n": 6,
         "source": "GDELT",
         "date": "2026-11-16"
       },
@@ -226,12 +189,38 @@
       "action": null
     },
     {
+      "no": 2,
+      "iso3": "PSE",
+      "country": "Occupied Palestinian Territory",
+      "title": "Palestine",
+      "text": "",
+      "score": 66,
+      "need": {
+        "value": "$4.06 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "65% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "178 mentions",
+        "n": 178,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
       "no": 6,
       "iso3": "AFG",
       "country": "Afghanistan",
       "title": "Afghanistan",
       "text": "",
-      "score": 66,
+      "score": 65,
       "need": {
         "value": "$1.71 billion asked",
         "source": "OCHA FTS",
@@ -252,12 +241,64 @@
       "action": null
     },
     {
+      "no": 15,
+      "iso3": "SOM",
+      "country": "Somalia",
+      "title": "Somalia",
+      "text": "",
+      "score": 63,
+      "need": {
+        "value": "$0.85 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "64% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "26 mentions",
+        "n": 26,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
+      "no": 1,
+      "iso3": "SDN",
+      "country": "Sudan",
+      "title": "Sudan",
+      "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
+      "score": 63,
+      "need": {
+        "value": "$2.87 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "49% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "50 mentions",
+        "n": 50,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
       "no": 4,
       "iso3": "YEM",
       "country": "Yemen",
       "title": "Yemen",
       "text": "",
-      "score": 64,
+      "score": 63,
       "need": {
         "value": "$2.16 billion asked",
         "source": "OCHA FTS",
@@ -299,25 +340,25 @@
       "action": null
     },
     {
-      "no": 15,
-      "iso3": "SOM",
-      "country": "Somalia",
-      "title": "Somalia",
+      "no": 13,
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "title": "Mozambique",
       "text": "",
       "score": 61,
       "need": {
-        "value": "$0.85 billion asked",
+        "value": "$0.53 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "gap": {
-        "value": "64% unfunded",
+        "value": "57% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
       "media": {
-        "value": "26 mentions",
-        "n": 26,
+        "value": "4 mentions",
+        "n": 4,
         "source": "GDELT",
         "date": "2026-11-16"
       },
@@ -346,38 +387,12 @@
       "action": null
     },
     {
-      "no": 34,
-      "iso3": "HND",
-      "country": "Honduras",
-      "title": "Honduras",
-      "text": "",
-      "score": 56,
-      "need": {
-        "value": "$0.04 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "97% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": {
-        "value": "8 mentions",
-        "n": 8,
-        "source": "GDELT",
-        "date": "2026-11-16"
-      },
-      "complete": true,
-      "action": null
-    },
-    {
       "no": 12,
       "iso3": "MMR",
       "country": "Myanmar",
       "title": "Myanmar",
       "text": "",
-      "score": 55,
+      "score": 57,
       "need": {
         "value": "$0.89 billion asked",
         "source": "OCHA FTS",
@@ -398,12 +413,38 @@
       "action": null
     },
     {
+      "no": 34,
+      "iso3": "HND",
+      "country": "Honduras",
+      "title": "Honduras",
+      "text": "",
+      "score": 57,
+      "need": {
+        "value": "$0.04 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "96% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "8 mentions",
+        "n": 8,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
       "no": 24,
       "iso3": "CMR",
       "country": "Cameroon",
       "title": "Cameroon",
       "text": "",
-      "score": 54,
+      "score": 56,
       "need": {
         "value": "$0.32 billion asked",
         "source": "OCHA FTS",
@@ -429,7 +470,7 @@
       "country": "Haiti",
       "title": "Haiti",
       "text": "",
-      "score": 52,
+      "score": 55,
       "need": {
         "value": "$0.88 billion asked",
         "source": "OCHA FTS",
@@ -440,51 +481,9 @@
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
-      "media": null,
-      "complete": false,
-      "action": null
-    },
-    {
-      "no": 13,
-      "iso3": "MOZ",
-      "country": "Mozambique",
-      "title": "Mozambique",
-      "text": "",
-      "score": 47,
-      "need": {
-        "value": "$0.53 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "57% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": null,
-      "complete": false,
-      "action": null
-    },
-    {
-      "no": 10,
-      "iso3": "VEN",
-      "country": "Venezuela, Bolivarian Republic of",
-      "title": "Venezuela",
-      "text": "",
-      "score": 46,
-      "need": {
-        "value": "$0.93 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "50% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
       "media": {
-        "value": "187 mentions",
-        "n": 187,
+        "value": "18 mentions",
+        "n": 18,
         "source": "GDELT",
         "date": "2026-11-16"
       },
@@ -497,7 +496,7 @@
       "country": "Colombia",
       "title": "Colombia",
       "text": "",
-      "score": 44,
+      "score": 46,
       "need": {
         "value": "$0.62 billion asked",
         "source": "OCHA FTS",
@@ -523,7 +522,7 @@
       "country": "Central African Republic",
       "title": "Central African Republic",
       "text": "",
-      "score": 44,
+      "score": 45,
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
@@ -544,12 +543,38 @@
       "action": null
     },
     {
+      "no": 10,
+      "iso3": "VEN",
+      "country": "Venezuela, Bolivarian Republic of",
+      "title": "Venezuela",
+      "text": "",
+      "score": 45,
+      "need": {
+        "value": "$0.93 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "50% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "187 mentions",
+        "n": 187,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
       "no": 17,
       "iso3": "BGD",
       "country": "Bangladesh",
       "title": "Bangladesh",
       "text": "",
-      "score": 40,
+      "score": 43,
       "need": {
         "value": "$0.71 billion asked",
         "source": "OCHA FTS",
@@ -627,7 +652,7 @@
       "country": "Madagascar",
       "title": "Madagascar",
       "text": "",
-      "score": 35,
+      "score": 36,
       "need": {
         "value": "$0.07 billion asked",
         "source": "OCHA FTS",
@@ -641,32 +666,6 @@
       "media": {
         "value": "5 mentions",
         "n": 5,
-        "source": "GDELT",
-        "date": "2026-11-16"
-      },
-      "complete": true,
-      "action": null
-    },
-    {
-      "no": 7,
-      "iso3": "LBN",
-      "country": "Lebanon",
-      "title": "Lebanon",
-      "text": "",
-      "score": 33,
-      "need": {
-        "value": "$0.64 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "46% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": {
-        "value": "88 mentions",
-        "n": 88,
         "source": "GDELT",
         "date": "2026-11-16"
       },
@@ -692,6 +691,32 @@
       },
       "media": null,
       "complete": false,
+      "action": null
+    },
+    {
+      "no": 7,
+      "iso3": "LBN",
+      "country": "Lebanon",
+      "title": "Lebanon",
+      "text": "",
+      "score": 32,
+      "need": {
+        "value": "$0.64 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "46% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "88 mentions",
+        "n": 88,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
       "action": null
     },
     {
@@ -721,6 +746,32 @@
       "action": null
     },
     {
+      "no": 25,
+      "iso3": "NGA",
+      "country": "Nigeria",
+      "title": "Nigeria",
+      "text": "",
+      "score": 26,
+      "need": {
+        "value": "$0.52 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "gap": {
+        "value": "27% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-16"
+      },
+      "media": {
+        "value": "53 mentions",
+        "n": 53,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
+      "action": null
+    },
+    {
       "no": 28,
       "iso3": "IRN",
       "country": "Iran, Islamic Republic of",
@@ -742,33 +793,12 @@
       "action": null
     },
     {
-      "no": 25,
-      "iso3": "NGA",
-      "country": "Nigeria",
-      "title": "Nigeria",
-      "text": "",
-      "score": 25,
-      "need": {
-        "value": "$0.52 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "gap": {
-        "value": "27% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-16"
-      },
-      "media": null,
-      "complete": false,
-      "action": null
-    },
-    {
       "no": 33,
       "iso3": "NPL",
       "country": "Nepal",
       "title": "Nepal",
       "text": "",
-      "score": 16,
+      "score": 26,
       "need": {
         "value": "$0.05 billion asked",
         "source": "OCHA FTS",
@@ -779,8 +809,13 @@
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
-      "media": null,
-      "complete": false,
+      "media": {
+        "value": "37 mentions",
+        "n": 37,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
       "action": null
     },
     {
@@ -789,7 +824,7 @@
       "country": "Sri Lanka",
       "title": "Sri Lanka",
       "text": "",
-      "score": 3,
+      "score": 13,
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
@@ -800,8 +835,13 @@
         "source": "OCHA FTS",
         "date": "2026-11-16"
       },
-      "media": null,
-      "complete": false,
+      "media": {
+        "value": "51 mentions",
+        "n": 51,
+        "source": "GDELT",
+        "date": "2026-11-16"
+      },
+      "complete": true,
       "action": null
     }
   ]
