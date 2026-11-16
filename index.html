@@ -2,6 +2,10 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ONE</title>
+<meta property="og:title" content="ONE: the crises the world is ignoring">
+<meta property="og:description" content="A daily board of humanitarian crises ranked by how little anyone is talking about them. Free public data, every figure sourced and dated.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://onecrisis.earth">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="The crises the world is ignoring right now, ranked by how little anyone is talking about them. Built only on free public data.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cesium@1.124.0/Build/Cesium/Widgets/widgets.css">
 <style>
@@ -45,7 +49,7 @@ td small{display:block}
 <section id="spot" aria-live="polite">
  <div id="no">#0000000</div><h1 id="name">Loading</h1><p id="txt"></p>
  <div id="rk" class="mono"></div><div id="figs"></div><div id="act"></div>
- <div style="display:flex;gap:8px;margin-top:12px"><button id="pv" type="button">Previous</button><button id="nx" type="button">Next</button></div>
+ <div style="display:flex;gap:8px;margin-top:12px"><button id="pv" type="button">Previous</button><button id="nx" type="button">Next</button><button id="sh" type="button">Share</button></div>
 </section>
 <section id="board" hidden>
  <button id="bx" type="button" style="position:fixed;top:16px;right:20px">Close</button>
@@ -150,7 +154,7 @@ function autoText(c){const p=[];
  return p.join(' ')}
 function fill(c){
  $('no').textContent='#'+String(c.no).padStart(7,'0');
- $('name').textContent=c.title||c.country;window.CUR=c;$('txt').textContent=c.text||autoText(c);
+ $('name').textContent=c.title||c.country;window.CUR=c;try{history.replaceState(null,'','#'+c.iso3)}catch(e){}$('txt').textContent=c.text||autoText(c);
  const i=(window.ORDER||[]).indexOf(c);$('rk').textContent=i>=0?'Silence rank '+(i+1)+' of '+ORDER.length:'';
  const F=$('figs');F.replaceChildren(fig('Silence score',c.score!=null?{value:c.score+' of 100'+(c.complete?'':' (provisional)'),source:'ONE method',date:window.DATA.updated}:null),
   fig('Need',c.need),fig('Unfunded',c.gap),fig('News volume, 7 days',c.media));
@@ -172,11 +176,16 @@ function board(d){
  $('meth').textContent=d.method||'';
  $('foot').textContent=d.updated?'Data updated '+d.updated+'. Sources: OCHA FTS, GDELT, ReliefWeb. Basemap: Esri.':'Waiting for the first data run. Basemap: Esri.';
  board(d);outlineAll();
- const c=d.crises.find(x=>x.iso3===d.spotlight)||d.crises[0];
+ const c=d.crises.find(x=>x.iso3===location.hash.slice(1).toUpperCase())||d.crises.find(x=>x.iso3===d.spotlight)||d.crises[0];
  if(c)focus(c);else{$('name').textContent='No crises loaded'}
 })();
 $('pv').onclick=()=>step(-1);$('nx').onclick=()=>step(1);
 addEventListener('keydown',e=>{if($('board').hidden){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});
+$('sh').onclick=async()=>{const c=window.CUR;if(!c)return;const i=ORDER.indexOf(c)+1,u=location.href.split('#')[0]+'#'+c.iso3;
+ const t='Crisis #'+String(c.no).padStart(7,'0')+': '+c.title+'. Silence rank '+i+' of '+ORDER.length+'. Almost nobody is talking about it.';
+ try{if(navigator.share){await navigator.share({title:'ONE',text:t,url:u});return}}catch(e){if(e.name==='AbortError')return}
+ try{await navigator.clipboard.writeText(t+' '+u);$('sh').textContent='Link copied';setTimeout(()=>$('sh').textContent='Share',2200)}catch(e){prompt('Copy this link',u)}};
+addEventListener('hashchange',()=>{const c=(window.DATA&&DATA.crises||[]).find(x=>x.iso3===location.hash.slice(1).toUpperCase());if(c&&c!==window.CUR)focus(c)});
 $('bi').onclick=()=>zoom(1);$('bo').onclick=()=>zoom(-1);$('bh').onclick=home;$('bt').onclick=()=>$('board').hidden=false;$('bx').onclick=()=>$('board').hidden=true;
 addEventListener('keydown',e=>{if(e.key==='Escape')$('board').hidden=true});
 </script></body></html>
