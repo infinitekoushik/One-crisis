@@ -1,1 +1,7 @@
-{ "SDN": { "label": "", "url": "" } }
+{
+  "*": {
+    "label": "Give through UN Crisis Relief",
+    "url": "https://crisisrelief.un.org/donate",
+    "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country."
+  }
+}
