@@ -160,7 +160,7 @@ function fill(c){
   fig('Need',c.need),fig('Unfunded',c.gap),fig('News volume, 7 days',c.media));
  const A=$('act');A.replaceChildren();
  if(c.action&&safe(c.action.url)&&c.action.verified){const a=h('a',null,c.action.label);a.href=c.action.url;a.rel='noopener';a.target='_blank';
-  A.append(h('span','mono','What you can do. Link checked '+c.action.verified),h('br'),a)}
+  const nt=h('div','mono',c.action.note||'');nt.style.marginTop='6px';A.append(h('span','mono','What you can do. Link checked '+c.action.verified),h('br'),a,nt)}
  else A.append(h('span','mono','Action for this crisis is not verified yet, so we show none.'))}
 
 function board(d){
