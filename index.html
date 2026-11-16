@@ -152,7 +152,7 @@ function fill(c){
  $('no').textContent='#'+String(c.no).padStart(7,'0');
  $('name').textContent=c.title||c.country;window.CUR=c;$('txt').textContent=c.text||autoText(c);
  const i=(window.ORDER||[]).indexOf(c);$('rk').textContent=i>=0?'Silence rank '+(i+1)+' of '+ORDER.length:'';
- const F=$('figs');F.replaceChildren(fig('Silence score',c.score!=null?{value:c.score+' of 100',source:'ONE method',date:window.DATA.updated}:null),
+ const F=$('figs');F.replaceChildren(fig('Silence score',c.score!=null?{value:c.score+' of 100'+(c.complete?'':' (provisional)'),source:'ONE method',date:window.DATA.updated}:null),
   fig('Need',c.need),fig('Unfunded',c.gap),fig('News volume, 7 days',c.media));
  const A=$('act');A.replaceChildren();
  if(c.action&&safe(c.action.url)&&c.action.verified){const a=h('a',null,c.action.label);a.href=c.action.url;a.rel='noopener';a.target='_blank';
@@ -164,7 +164,7 @@ function board(d){
  window.ORDER=[...d.crises].sort((a,b)=>(b.score??-1)-(a.score??-1));ORDER.forEach((c,i)=>{
   const tr=h('tr','row');tr.tabIndex=0;
   const cell=(f)=>{const td=h('td');if(f&&f.value!=null){td.append(h('div',null,f.value),h('small','mono',f.source+', '+f.date))}else td.append(h('span','mono','no data yet'));return td};
-  tr.append(h('td','mono',i+1),h('td',null,c.country),h('td',null,c.score!=null?c.score:'-'),cell(c.need),cell(c.gap),cell(c.media));
+  tr.append(h('td','mono',i+1),h('td',null,c.country),(()=>{const td=h('td',null,c.score!=null?c.score:'-');if(!c.complete)td.append(h('small','mono','provisional'));return td})(),cell(c.need),cell(c.gap),cell(c.media));
   const go=()=>{$('board').hidden=true;focus(c)};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()};rows.append(tr)})}
 
 (async()=>{
