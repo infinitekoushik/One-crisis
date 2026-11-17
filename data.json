@@ -10,12 +10,12 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "BFA: fetch failed",
-      "TCD: Unexpected token 'T', \"The specif\"... is not valid JSON",
-      "HTI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Hai",
-      "CAF: fetch failed",
-      "NGA: fetch failed",
-      "COD: fetch failed"
+      "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
+      "TCD: fetch failed",
+      "AFG: fetch failed",
+      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
+      "CAF: Unexpected token 'P', \"Parenthese\"... is not valid JSON",
+      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mal"
     ]
   },
   "history": [
@@ -85,7 +85,7 @@
         "date": "2026-11-17"
       },
       "gap": {
-        "value": "59% unfunded",
+        "value": "60% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-17"
       },
@@ -116,7 +116,7 @@
         "date": "2026-11-17"
       },
       "gap": {
-        "value": "46% unfunded",
+        "value": "47% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-17"
       },
@@ -254,37 +254,6 @@
       }
     },
     {
-      "no": 4,
-      "iso3": "YEM",
-      "country": "Yemen",
-      "title": "Yemen",
-      "text": "",
-      "score": 65,
-      "need": {
-        "value": "$2.16 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-17"
-      },
-      "gap": {
-        "value": "77% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-17"
-      },
-      "media": {
-        "value": "101 mentions",
-        "n": 101,
-        "source": "GDELT",
-        "date": "2026-11-17"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-17"
-      }
-    },
-    {
       "no": 2,
       "iso3": "PSE",
       "country": "Occupied Palestinian Territory",
@@ -302,10 +271,10 @@
         "date": "2026-11-17"
       },
       "media": {
-        "value": "178 mentions",
-        "n": 178,
+        "value": "136 mentions",
+        "n": 136,
         "source": "GDELT",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "complete": true,
       "action": {
@@ -335,6 +304,37 @@
       "media": {
         "value": "17 mentions",
         "n": 17,
+        "source": "GDELT",
+        "date": "2026-11-17"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-17"
+      }
+    },
+    {
+      "no": 4,
+      "iso3": "YEM",
+      "country": "Yemen",
+      "title": "Yemen",
+      "text": "",
+      "score": 64,
+      "need": {
+        "value": "$2.16 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-17"
+      },
+      "gap": {
+        "value": "77% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-17"
+      },
+      "media": {
+        "value": "101 mentions",
+        "n": 101,
         "source": "GDELT",
         "date": "2026-11-17"
       },
@@ -595,7 +595,7 @@
       "country": "Venezuela, Bolivarian Republic of",
       "title": "Venezuela",
       "text": "",
-      "score": 47,
+      "score": 46,
       "need": {
         "value": "$0.93 billion asked",
         "source": "OCHA FTS",
@@ -726,7 +726,7 @@
         "date": "2026-11-17"
       },
       "gap": {
-        "value": "24% unfunded",
+        "value": "23% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-17"
       },
@@ -750,7 +750,7 @@
       "country": "Viet Nam",
       "title": "Vietnam",
       "text": "",
-      "score": 36,
+      "score": 38,
       "need": {
         "value": "$0.06 billion asked",
         "source": "OCHA FTS",
@@ -762,10 +762,10 @@
         "date": "2026-11-17"
       },
       "media": {
-        "value": "136 mentions",
-        "n": 136,
+        "value": "90 mentions",
+        "n": 90,
         "source": "GDELT",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "complete": true,
       "action": {
@@ -812,7 +812,7 @@
       "country": "Lebanon",
       "title": "Lebanon",
       "text": "",
-      "score": 33,
+      "score": 32,
       "need": {
         "value": "$0.64 billion asked",
         "source": "OCHA FTS",
@@ -921,6 +921,37 @@
       }
     },
     {
+      "no": 25,
+      "iso3": "NGA",
+      "country": "Nigeria",
+      "title": "Nigeria",
+      "text": "",
+      "score": 25,
+      "need": {
+        "value": "$0.52 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-17"
+      },
+      "gap": {
+        "value": "27% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-17"
+      },
+      "media": {
+        "value": "39 mentions",
+        "n": 39,
+        "source": "GDELT",
+        "date": "2026-11-17"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-17"
+      }
+    },
+    {
       "no": 33,
       "iso3": "NPL",
       "country": "Nepal",
@@ -942,37 +973,6 @@
         "n": 19,
         "source": "GDELT",
         "date": "2026-11-17"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-17"
-      }
-    },
-    {
-      "no": 25,
-      "iso3": "NGA",
-      "country": "Nigeria",
-      "title": "Nigeria",
-      "text": "",
-      "score": 24,
-      "need": {
-        "value": "$0.52 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-17"
-      },
-      "gap": {
-        "value": "27% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-17"
-      },
-      "media": {
-        "value": "53 mentions",
-        "n": 53,
-        "source": "GDELT",
-        "date": "2026-11-16"
       },
       "complete": true,
       "action": {
