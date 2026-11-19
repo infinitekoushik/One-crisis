@@ -22,7 +22,8 @@ button:hover,button:focus-visible{background:#e9e6df;color:#000;outline:none}
 #spot{position:fixed;left:20px;bottom:36px;width:min(440px,calc(100% - 40px));max-height:70vh;overflow:auto;background:rgba(0,0,0,.84);border:1px solid #3a3935;padding:18px}
 #no{font-size:clamp(30px,6vw,56px);line-height:1;color:#e8262d;font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;letter-spacing:.02em}
 h1{font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 8px}
-#txt{margin:0 0 14px;max-width:62ch}
+#txt{margin:0 0 12px;max-width:62ch;white-space:pre-line;font-size:15px}
+#src{margin:0 0 14px;line-height:1.5}#src a{color:#8a8780}
 .fig{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #3a3935;padding:8px 0}
 .fig b{font-weight:400;font-size:18px}
 .fig .mono{display:block}
@@ -47,7 +48,7 @@ td small{display:block}
 <div id="top"><span class="mono">ONE / onecrisis.earth</span><div id="nav"><button id="bi" type="button">Zoom in</button><button id="bo" type="button">Zoom out</button><button id="bh" type="button">Whole earth</button><button id="bt" type="button">Silence Index</button></div></div>
 <div id="hint" class="mono">Drag to rotate. Scroll or use the buttons to zoom. Click any red country, or use Next and Previous.</div>
 <section id="spot" aria-live="polite">
- <div id="no">#0000000</div><h1 id="name">Loading</h1><p id="txt"></p>
+ <div id="no">#0000000</div><h1 id="name">Loading</h1><p id="txt"></p><div id="src" class="mono"></div>
  <div id="rk" class="mono"></div><div id="figs"></div><div id="act"></div>
  <div style="display:flex;gap:8px;margin-top:12px"><button id="pv" type="button">Previous</button><button id="nx" type="button">Next</button><button id="sh" type="button">Share</button></div>
 </section>
@@ -154,7 +155,11 @@ function autoText(c){const p=[];
  return p.join(' ')}
 function fill(c){
  $('no').textContent='#'+String(c.no).padStart(7,'0');
- $('name').textContent=c.title||c.country;window.CUR=c;try{history.replaceState(null,'','#'+c.iso3)}catch(e){}$('txt').textContent=c.text||autoText(c);
+ $('name').textContent=c.title||c.country;window.CUR=c;try{history.replaceState(null,'','#'+c.iso3)}catch(e){}const st=((window.STORIES||{}).stories||{})[c.iso3];
+ $('txt').textContent=st?st.text:(c.text||autoText(c));
+ const S=$('src');S.replaceChildren();
+ if(st&&st.sources&&st.sources.length){S.append('Sources, checked '+STORIES.asOf+': ');
+  st.sources.forEach((x,i)=>{if(!safe(x.url))return;const a=h('a',null,x.name);a.href=x.url;a.target='_blank';a.rel='noopener';S.append(a);if(i<st.sources.length-1)S.append('; ')})}
  const i=(window.ORDER||[]).indexOf(c);$('rk').textContent=i>=0?'Silence rank '+(i+1)+' of '+ORDER.length:'';
  const F=$('figs');F.replaceChildren(fig('Silence score',c.score!=null?{value:c.score+' of 100'+(c.complete?'':' (provisional)'),source:'ONE method',date:window.DATA.updated}:null),
   fig('Need',c.need),fig('Unfunded',c.gap),fig('News volume, 7 days',c.media));
@@ -173,6 +178,7 @@ function board(d){
 
 (async()=>{
  const d=window.DATA=await (await fetch('data.json?'+Date.now())).json();
+ try{window.STORIES=await (await fetch('stories.json?'+Date.now())).json()}catch(e){window.STORIES={stories:{}}}
  $('meth').textContent=d.method||'';
  $('foot').textContent=d.updated?'Data updated '+d.updated+'. Sources: OCHA FTS, GDELT, ReliefWeb. Basemap: Esri.':'Waiting for the first data run. Basemap: Esri.';
  board(d);outlineAll();
