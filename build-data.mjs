@@ -77,13 +77,28 @@ const crises = list.map(x => {
 let n = Math.max(0, ...crises.map(c => c.no || 0));
 crises.forEach(c => { if (!c.no) c.no = ++n; });
 
-// 5. Verify action links (each distinct link once). A link that does not answer is dropped, never shown.
+// 5. Verify action links (each distinct link once). A link must answer AND the page must still mention the place (the "expect" word in actions.json), so a quiet redirect to a home page fails. A country link that fails falls back to the general UN link. A link that fails too is dropped, never shown.
 const seen = new Map();
-for (const c of crises) if (c.action) {
-  if (!seen.has(c.action.url)) {
-    try { const r = await fetch(c.action.url, { redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; onecrisis.earth link check)' } }); seen.set(c.action.url, r.ok); } catch { seen.set(c.action.url, false); }
+const alive = async a => {
+  const k = a.url + '|' + (a.expect || '');
+  if (!seen.has(k)) {
+    let ok = false;
+    try {
+      const r = await fetch(a.url, { redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; onecrisis.earth link check)' } });
+      ok = r.ok && (!a.expect || (await r.text()).toLowerCase().includes(a.expect.toLowerCase()));
+    } catch { ok = false; }
+    seen.set(k, ok);
   }
-  if (seen.get(c.action.url)) c.action.verified = TODAY; else c.action = null;
+  return seen.get(k);
+};
+for (const c of crises) if (c.action) {
+  const own = actions[c.iso3] && actions[c.iso3].url ? actions[c.iso3] : null;
+  if (own && !(await alive(own))) {
+    console.warn('Country link failed, using general link for', c.iso3, own.url);
+    c.action = actions['*'] && actions['*'].url ? { label: actions['*'].label, url: actions['*'].url, note: actions['*'].note || '', verified: null, expect: actions['*'].expect } : null;
+  }
+  if (c.action && await alive(c.action)) { c.action.verified = TODAY; delete c.action.expect; }
+  else c.action = null;
 }
 
 // 6. Spotlight: highest score not featured in the last 30 days. Same-day reruns give the same pick.
