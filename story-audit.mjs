@@ -3,6 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const TODAY = new Date().toISOString().slice(0, 10);
 const daysSince = d => Math.round((Date.parse(TODAY) - Date.parse(d)) / 864e5);
+const AC = JSON.parse(await readFile('actions.json', 'utf8'));
 const S = JSON.parse(await readFile('stories.json', 'utf8')), D = JSON.parse(await readFile('data.json', 'utf8'));
 const STALE_DAYS = 150; // newest dated source older than this gets flagged. Tighten it once the first round is done.
 const HEAD = { 'user-agent': 'Mozilla/5.0 (compatible; onecrisis.earth story audit)', accept: 'text/html,*/*' };
@@ -61,6 +62,11 @@ if (!todo.length) out.push('Nothing flagged. Still skim the list below.', '');
 for (const r of todo) { out.push(line(r)); r.flags.forEach(f => out.push('  - ' + f)); r.links.forEach(l => out.push('  - ' + l)); }
 out.push('', '## Passed the checks, still read each one once', '');
 for (const r of fine) { out.push(line(r) + ', ' + r.n + ' sources, newest ' + (r.newest || 'unknown')); r.links.forEach(l => out.push('  - ' + l)); }
+const hand = Object.entries(AC).filter(([, v]) => v.handChecked);
+if (hand.length) {
+  out.push('', '## Links a robot cannot check, so you do', '');
+  for (const [k, v] of hand) out.push('- [ ] **' + k + '** last checked by hand ' + v.handChecked + ' (' + daysSince(v.handChecked) + ' days ago). Open ' + v.url + ' and make sure it still works and still matches the note. Then set handChecked for ' + k + ' in actions.json to today. After 45 days the site quietly falls back to the general link.');
+}
 out.push('', '## How to refresh one story', '',
   '1. Open the crisis in OCHA FTS and ACAPS. Copy the three numbers that moved: people in need, money asked, money still missing.',
   '2. Find one or two sources from the last 60 days that say what is happening on the ground. Wire services, UN agencies, ACAPS, IPC, large NGOs. Prefer the original report over a news write-up of it.',
