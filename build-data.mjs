@@ -79,14 +79,19 @@ crises.forEach(c => { if (!c.no) c.no = ++n; });
 
 // 5. Verify action links (each distinct link once). A link must answer AND the page must still mention the place (the "expect" word in actions.json), so a quiet redirect to a home page fails. A country link that fails falls back to the general UN link. A link that fails too is dropped, never shown.
 const seen = new Map();
+dbg.links = {};
+const BROWSER = { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36', accept: 'text/html,application/xhtml+xml,*/*;q=0.8', 'accept-language': 'en-US,en;q=0.9' };
 const alive = async a => {
   const k = a.url + '|' + (a.expect || '');
   if (!seen.has(k)) {
-    let ok = false;
+    let ok = false, why = '';
     try {
-      const r = await fetch(a.url, { redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (compatible; onecrisis.earth link check)' } });
-      ok = r.ok && (!a.expect || (await r.text()).toLowerCase().includes(a.expect.toLowerCase()));
-    } catch { ok = false; }
+      const r = await fetch(a.url, { redirect: 'follow', headers: BROWSER, signal: AbortSignal.timeout(25000) });
+      const t = r.ok ? (await r.text()).toLowerCase() : '';
+      ok = r.ok && (!a.expect || t.includes(a.expect.toLowerCase()));
+      why = r.status + (r.ok && !ok ? ' loaded but the word "' + a.expect + '" was not on the page' : '');
+    } catch (e) { why = 'error ' + (e.cause?.code || e.name); }
+    dbg.links[a.url] = (ok ? 'ok ' : 'FAIL ') + why;
     seen.set(k, ok);
   }
   return seen.get(k);
