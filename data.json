@@ -10,12 +10,12 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
+      "CMR: fetch failed",
+      "COL: fetch failed",
       "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cha",
-      "AFG: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Afg",
-      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
       "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce",
-      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%",
-      "MLI: fetch failed"
+      "COD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22DR",
+      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%"
     ],
     "links": {
       "https://donate.unhcr.org/south-sudan": "FAIL 403",
@@ -99,7 +99,7 @@
       "country": "Syrian Arab Republic",
       "title": "Syria",
       "text": "",
-      "score": 74,
+      "score": 75,
       "need": {
         "value": "$2.92 billion asked",
         "source": "OCHA FTS",
@@ -114,7 +114,7 @@
         "value": "27 mentions",
         "n": 27,
         "source": "GDELT",
-        "date": "2026-11-20"
+        "date": "2026-11-21"
       },
       "complete": true,
       "action": {
@@ -192,7 +192,7 @@
       "country": "Afghanistan",
       "title": "Afghanistan",
       "text": "",
-      "score": 69,
+      "score": 68,
       "need": {
         "value": "$1.71 billion asked",
         "source": "OCHA FTS",
@@ -204,10 +204,10 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "27 mentions",
-        "n": 27,
+        "value": "28 mentions",
+        "n": 28,
         "source": "GDELT",
-        "date": "2026-11-20"
+        "date": "2026-11-21"
       },
       "complete": true,
       "action": {
@@ -323,10 +323,10 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "149 mentions",
-        "n": 149,
+        "value": "144 mentions",
+        "n": 144,
         "source": "GDELT",
-        "date": "2026-11-20"
+        "date": "2026-11-21"
       },
       "complete": true,
       "action": {
@@ -388,7 +388,7 @@
         "value": "23 mentions",
         "n": 23,
         "source": "GDELT",
-        "date": "2026-11-20"
+        "date": "2026-11-21"
       },
       "complete": true,
       "action": {
@@ -456,37 +456,6 @@
       }
     },
     {
-      "no": 13,
-      "iso3": "MOZ",
-      "country": "Mozambique",
-      "title": "Mozambique",
-      "text": "",
-      "score": 57,
-      "need": {
-        "value": "$0.53 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "57% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "4 mentions",
-        "n": 4,
-        "source": "GDELT",
-        "date": "2026-11-20"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
       "no": 1,
       "iso3": "SDN",
       "country": "Sudan",
@@ -506,6 +475,37 @@
       "media": {
         "value": "38 mentions",
         "n": 38,
+        "source": "GDELT",
+        "date": "2026-11-21"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-21"
+      }
+    },
+    {
+      "no": 13,
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "title": "Mozambique",
+      "text": "",
+      "score": 56,
+      "need": {
+        "value": "$0.53 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "gap": {
+        "value": "57% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "media": {
+        "value": "5 mentions",
+        "n": 5,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -678,7 +678,7 @@
       "country": "Central African Republic",
       "title": "Central African Republic",
       "text": "",
-      "score": 42,
+      "score": 43,
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
