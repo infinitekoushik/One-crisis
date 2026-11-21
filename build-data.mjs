@@ -78,33 +78,61 @@ let n = Math.max(0, ...crises.map(c => c.no || 0));
 crises.forEach(c => { if (!c.no) c.no = ++n; });
 
 // 5. Verify action links (each distinct link once). A link must answer AND the page must still mention the place (the "expect" word in actions.json), so a quiet redirect to a home page fails. A country link that fails falls back to the general UN link. A link that fails too is dropped, never shown.
-const seen = new Map();
+const seen = new Map(), blockedKeys = new Set();
 dbg.links = {};
 const BROWSER = { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36', accept: 'text/html,application/xhtml+xml,*/*;q=0.8', 'accept-language': 'en-US,en;q=0.9' };
+// A real Chromium, opened only for links that plain fetch is turned away from. Playwright is installed by the workflow, never committed.
+let browser = null;
+const viaBrowser = async a => {
+  try {
+    if (!browser) { const { chromium } = await import('playwright'); browser = await chromium.launch({ channel: 'chromium' }); }
+    const ctx = await browser.newContext({ locale: 'en-US', userAgent: BROWSER['user-agent'] });
+    const page = await ctx.newPage();
+    const r = await page.goto(a.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await page.waitForTimeout(1500);
+    const text = (await page.content()).toLowerCase();
+    await ctx.close();
+    return { status: r ? r.status() : 0, text };
+  } catch (e) { return { status: 0, text: '', err: String(e.message || e.name).split('\n')[0].slice(0, 90) }; }
+};
 const alive = async a => {
   const k = a.url + '|' + (a.expect || '');
   if (!seen.has(k)) {
-    let ok = false, why = '';
+    let ok = false, why = '', status = 0;
     try {
       const r = await fetch(a.url, { redirect: 'follow', headers: BROWSER, signal: AbortSignal.timeout(25000) });
+      status = r.status;
       const t = r.ok ? (await r.text()).toLowerCase() : '';
       ok = r.ok && (!a.expect || t.includes(a.expect.toLowerCase()));
       why = r.status + (r.ok && !ok ? ' loaded but the word "' + a.expect + '" was not on the page' : '');
     } catch (e) { why = 'error ' + (e.cause?.code || e.name); }
+    if ([401, 403, 429].includes(status)) {
+      const b = await viaBrowser(a);
+      if (b.status >= 200 && b.status < 300 && (!a.expect || b.text.includes(a.expect.toLowerCase()))) { ok = true; why += ', then a real browser got ' + b.status; }
+      else { blockedKeys.add(k); why += ', and a real browser got ' + (b.status || b.err); }
+    }
     dbg.links[a.url] = (ok ? 'ok ' : 'FAIL ') + why;
     seen.set(k, ok);
   }
   return seen.get(k);
 };
+// Some sites (UNHCR, for one) turn GitHub's servers away with a 403, so a robot cannot check them. For those, a link I checked by hand (handChecked in actions.json) is shown honestly as "Checked by hand", for 45 days. After that it falls back to the general link until someone re-checks it.
+const HAND_DAYS = 45, daysAgo = d => Math.round((Date.parse(TODAY) - Date.parse(d)) / 864e5);
 for (const c of crises) if (c.action) {
   const own = actions[c.iso3] && actions[c.iso3].url ? actions[c.iso3] : null;
   if (own && !(await alive(own))) {
+    if (blockedKeys.has(own.url + '|' + (own.expect || '')) && own.handChecked && daysAgo(own.handChecked) <= HAND_DAYS) {
+      c.action = { label: own.label, url: own.url, note: own.note || '', verified: own.handChecked, method: 'hand' };
+      continue;
+    }
     console.warn('Country link failed, using general link for', c.iso3, own.url);
     c.action = actions['*'] && actions['*'].url ? { label: actions['*'].label, url: actions['*'].url, note: actions['*'].note || '', verified: null, expect: actions['*'].expect } : null;
   }
   if (c.action && await alive(c.action)) { c.action.verified = TODAY; delete c.action.expect; }
   else c.action = null;
 }
+
+if (browser) await browser.close();
 
 // 6. Spotlight: highest score not featured in the last 30 days. Same-day reruns give the same pick.
 const hist = (prev.history || []).filter(h => h.date !== TODAY);
