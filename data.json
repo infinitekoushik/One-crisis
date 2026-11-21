@@ -10,17 +10,17 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "CMR: fetch failed",
-      "COL: fetch failed",
+      "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
       "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cha",
-      "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce",
-      "COD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22DR",
-      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%"
+      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
+      "CAF: fetch failed",
+      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%",
+      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mal"
     ],
     "links": {
-      "https://donate.unhcr.org/south-sudan": "FAIL 403",
+      "https://donate.unhcr.org/south-sudan": "FAIL 403, and a real browser got browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium",
       "https://crisisrelief.un.org/donate": "ok 200",
-      "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency": "FAIL 403"
+      "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency": "FAIL 403, and a real browser got browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium"
     }
   },
   "history": [
@@ -68,7 +68,7 @@
       "country": "South Sudan",
       "title": "South Sudan",
       "text": "",
-      "score": 78,
+      "score": 75,
       "need": {
         "value": "$1.46 billion asked",
         "source": "OCHA FTS",
@@ -80,10 +80,10 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "3 mentions",
-        "n": 3,
+        "value": "6 mentions",
+        "n": 6,
         "source": "GDELT",
-        "date": "2026-11-20"
+        "date": "2026-11-21"
       },
       "complete": true,
       "action": {
@@ -111,8 +111,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "27 mentions",
-        "n": 27,
+        "value": "31 mentions",
+        "n": 31,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -130,7 +130,7 @@
       "country": "Democratic Republic of the Congo",
       "title": "DR Congo",
       "text": "",
-      "score": 70,
+      "score": 71,
       "need": {
         "value": "$2.13 billion asked",
         "source": "OCHA FTS",
@@ -161,7 +161,7 @@
       "country": "Burkina Faso",
       "title": "Burkina Faso",
       "text": "",
-      "score": 69,
+      "score": 70,
       "need": {
         "value": "$0.66 billion asked",
         "source": "OCHA FTS",
@@ -204,8 +204,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "28 mentions",
-        "n": 28,
+        "value": "33 mentions",
+        "n": 33,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -235,8 +235,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "19 mentions",
-        "n": 19,
+        "value": "20 mentions",
+        "n": 20,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -280,7 +280,7 @@
       "country": "Yemen",
       "title": "Yemen",
       "text": "",
-      "score": 66,
+      "score": 65,
       "need": {
         "value": "$2.16 billion asked",
         "source": "OCHA FTS",
@@ -292,8 +292,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "71 mentions",
-        "n": 71,
+        "value": "79 mentions",
+        "n": 79,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -323,8 +323,39 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "144 mentions",
-        "n": 144,
+        "value": "181 mentions",
+        "n": 181,
+        "source": "GDELT",
+        "date": "2026-11-21"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-21"
+      }
+    },
+    {
+      "no": 15,
+      "iso3": "SOM",
+      "country": "Somalia",
+      "title": "Somalia",
+      "text": "",
+      "score": 63,
+      "need": {
+        "value": "$0.85 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "gap": {
+        "value": "64% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "media": {
+        "value": "23 mentions",
+        "n": 23,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -368,25 +399,25 @@
       }
     },
     {
-      "no": 15,
-      "iso3": "SOM",
-      "country": "Somalia",
-      "title": "Somalia",
+      "no": 13,
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "title": "Mozambique",
       "text": "",
-      "score": 62,
+      "score": 59,
       "need": {
-        "value": "$0.85 billion asked",
+        "value": "$0.53 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "gap": {
-        "value": "64% unfunded",
+        "value": "57% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "media": {
-        "value": "23 mentions",
-        "n": 23,
+        "value": "5 mentions",
+        "n": 5,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -430,7 +461,7 @@
       "country": "Haiti",
       "title": "Haiti",
       "text": "",
-      "score": 57,
+      "score": 56,
       "need": {
         "value": "$0.88 billion asked",
         "source": "OCHA FTS",
@@ -442,8 +473,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "14 mentions",
-        "n": 14,
+        "value": "17 mentions",
+        "n": 17,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -461,7 +492,7 @@
       "country": "Sudan",
       "title": "Sudan",
       "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
-      "score": 57,
+      "score": 56,
       "need": {
         "value": "$2.87 billion asked",
         "source": "OCHA FTS",
@@ -473,39 +504,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "38 mentions",
-        "n": 38,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 13,
-      "iso3": "MOZ",
-      "country": "Mozambique",
-      "title": "Mozambique",
-      "text": "",
-      "score": 56,
-      "need": {
-        "value": "$0.53 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "57% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "5 mentions",
-        "n": 5,
+        "value": "51 mentions",
+        "n": 51,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -523,7 +523,7 @@
       "country": "Honduras",
       "title": "Honduras",
       "text": "",
-      "score": 56,
+      "score": 55,
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
@@ -535,39 +535,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "5 mentions",
-        "n": 5,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 24,
-      "iso3": "CMR",
-      "country": "Cameroon",
-      "title": "Cameroon",
-      "text": "",
-      "score": 55,
-      "need": {
-        "value": "$0.32 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "60% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "9 mentions",
-        "n": 9,
+        "value": "7 mentions",
+        "n": 7,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -597,8 +566,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "28 mentions",
-        "n": 28,
+        "value": "33 mentions",
+        "n": 33,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -611,25 +580,25 @@
       }
     },
     {
-      "no": 21,
-      "iso3": "COL",
-      "country": "Colombia",
-      "title": "Colombia",
+      "no": 24,
+      "iso3": "CMR",
+      "country": "Cameroon",
+      "title": "Cameroon",
       "text": "",
-      "score": 46,
+      "score": 53,
       "need": {
-        "value": "$0.62 billion asked",
+        "value": "$0.32 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "gap": {
-        "value": "51% unfunded",
+        "value": "60% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "media": {
-        "value": "26 mentions",
-        "n": 26,
+        "value": "10 mentions",
+        "n": 10,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -647,7 +616,7 @@
       "country": "Myanmar",
       "title": "Myanmar",
       "text": "",
-      "score": 45,
+      "score": 46,
       "need": {
         "value": "$0.89 billion asked",
         "source": "OCHA FTS",
@@ -659,8 +628,39 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "45 mentions",
-        "n": 45,
+        "value": "50 mentions",
+        "n": 50,
+        "source": "GDELT",
+        "date": "2026-11-21"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-21"
+      }
+    },
+    {
+      "no": 21,
+      "iso3": "COL",
+      "country": "Colombia",
+      "title": "Colombia",
+      "text": "",
+      "score": 45,
+      "need": {
+        "value": "$0.62 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "gap": {
+        "value": "51% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "media": {
+        "value": "31 mentions",
+        "n": 31,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -678,7 +678,7 @@
       "country": "Central African Republic",
       "title": "Central African Republic",
       "text": "",
-      "score": 43,
+      "score": 44,
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
@@ -721,8 +721,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "600 mentions",
-        "n": 600,
+        "value": "706 mentions",
+        "n": 706,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -740,7 +740,7 @@
       "country": "Madagascar",
       "title": "Madagascar",
       "text": "",
-      "score": 38,
+      "score": 37,
       "need": {
         "value": "$0.07 billion asked",
         "source": "OCHA FTS",
@@ -752,8 +752,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "2 mentions",
-        "n": 2,
+        "value": "3 mentions",
+        "n": 3,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -783,8 +783,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "94 mentions",
-        "n": 94,
+        "value": "110 mentions",
+        "n": 110,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -814,8 +814,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "32 mentions",
-        "n": 32,
+        "value": "36 mentions",
+        "n": 36,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -845,8 +845,8 @@
         "date": "2026-11-21"
       },
       "media": {
-        "value": "36 mentions",
-        "n": 36,
+        "value": "44 mentions",
+        "n": 44,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -859,25 +859,25 @@
       }
     },
     {
-      "no": 25,
-      "iso3": "NGA",
-      "country": "Nigeria",
-      "title": "Nigeria",
+      "no": 35,
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "title": "Pakistan",
       "text": "",
       "score": 27,
       "need": {
-        "value": "$0.52 billion asked",
+        "value": "$0.06 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "gap": {
-        "value": "27% unfunded",
+        "value": "54% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "media": {
-        "value": "30 mentions",
-        "n": 30,
+        "value": "77 mentions",
+        "n": 77,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -916,56 +916,25 @@
       }
     },
     {
-      "no": 35,
-      "iso3": "PAK",
-      "country": "Pakistan",
-      "title": "Pakistan",
+      "no": 25,
+      "iso3": "NGA",
+      "country": "Nigeria",
+      "title": "Nigeria",
       "text": "",
       "score": 26,
       "need": {
-        "value": "$0.06 billion asked",
+        "value": "$0.52 billion asked",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "gap": {
-        "value": "54% unfunded",
+        "value": "27% unfunded",
         "source": "OCHA FTS",
         "date": "2026-11-21"
       },
       "media": {
-        "value": "77 mentions",
-        "n": 77,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 33,
-      "iso3": "NPL",
-      "country": "Nepal",
-      "title": "Nepal",
-      "text": "",
-      "score": 26,
-      "need": {
-        "value": "$0.05 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "42% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "20 mentions",
-        "n": 20,
+        "value": "36 mentions",
+        "n": 36,
         "source": "GDELT",
         "date": "2026-11-21"
       },
@@ -996,6 +965,37 @@
       },
       "media": null,
       "complete": false,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-21"
+      }
+    },
+    {
+      "no": 33,
+      "iso3": "NPL",
+      "country": "Nepal",
+      "title": "Nepal",
+      "text": "",
+      "score": 25,
+      "need": {
+        "value": "$0.05 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "gap": {
+        "value": "42% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-21"
+      },
+      "media": {
+        "value": "26 mentions",
+        "n": 26,
+        "source": "GDELT",
+        "date": "2026-11-21"
+      },
+      "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
