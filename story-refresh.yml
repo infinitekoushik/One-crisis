@@ -1,0 +1,20 @@
+name: story-refresh
+on:
+  schedule:
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node story-audit.mjs
+      - run: gh issue create --title "Story refresh $(date -u +%Y-%m)" --body-file story-audit.md
+        env:
+          GH_TOKEN: ${{ github.token }}
