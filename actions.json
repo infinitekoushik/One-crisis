@@ -9,12 +9,14 @@
     "label": "Give to UNHCR's South Sudan appeal",
     "url": "https://donate.unhcr.org/south-sudan",
     "note": "The UN Refugee Agency, with teams inside South Sudan and in the countries next door. Your gift goes to shelter, emergency supplies and protection for people forced from their homes. It covers displaced families, not every need in the country.",
-    "expect": "south sudan"
+    "expect": "south sudan",
+    "handChecked": "2026-11-21"
   },
   "COD": {
     "label": "Give to UNHCR's DR Congo emergency",
     "url": "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency",
-    "note": "The UN Refugee Agency, working inside DR Congo and across its borders. Your gift goes to families uprooted by the fighting in the east. It covers displaced people, not every need in the country.",
-    "expect": "congo"
+    "note": "The UN Refugee Agency, working inside DR Congo and across its borders. The current appeal covers families uprooted by the fighting in the east and the Ebola outbreak there. It covers displaced people, not every need in the country.",
+    "expect": "congo",
+    "handChecked": "2026-11-21"
   }
 }
