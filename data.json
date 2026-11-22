@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "method": "Silence score, 0 to 100: 40% how big the need is (OCHA FTS requirements), 30% how much of it is unfunded (OCHA FTS), 30% how little the news covers it (GDELT, 7 days). Each part is ranked against every other crisis on the board. If a figure could not be loaded for a crisis, the score uses the parts we do have.",
-  "spotlight": "YEM",
+  "spotlight": "SOM",
   "debug": {
     "skippedRegional": [
       "Sudan Emergency: Regional Refugee Response Plan 2026",
@@ -10,12 +10,12 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
-      "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cha",
-      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
-      "CAF: fetch failed",
-      "PSE: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(Gaza%",
-      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mal"
+      "CMR: fetch failed",
+      "BFA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Bur",
+      "COL: fetch failed",
+      "TCD: fetch failed",
+      "AFG: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Afg",
+      "MMR: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mya"
     ],
     "links": {
       "https://donate.unhcr.org/south-sudan": "FAIL 403, and a real browser got browserType.launch: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium",
@@ -59,6 +59,10 @@
     {
       "date": "2026-11-21",
       "iso3": "YEM"
+    },
+    {
+      "date": "2026-11-22",
+      "iso3": "SOM"
     }
   ],
   "crises": [
@@ -68,16 +72,16 @@
       "country": "South Sudan",
       "title": "South Sudan",
       "text": "",
-      "score": 75,
+      "score": 76,
       "need": {
         "value": "$1.46 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "60% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "6 mentions",
@@ -87,10 +91,11 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "label": "Give to UNHCR's South Sudan appeal",
+        "url": "https://donate.unhcr.org/south-sudan",
+        "note": "The UN Refugee Agency, with teams inside South Sudan and in the countries next door. Your gift goes to shelter, emergency supplies and protection for people forced from their homes. It covers displaced families, not every need in the country.",
+        "verified": "2026-11-21",
+        "method": "hand"
       }
     },
     {
@@ -99,16 +104,16 @@
       "country": "Syrian Arab Republic",
       "title": "Syria",
       "text": "",
-      "score": 75,
+      "score": 74,
       "need": {
         "value": "$2.92 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "65% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "31 mentions",
@@ -121,38 +126,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 5,
-      "iso3": "COD",
-      "country": "Democratic Republic of the Congo",
-      "title": "DR Congo",
-      "text": "",
-      "score": 71,
-      "need": {
-        "value": "$2.13 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "47% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "3 mentions",
-        "n": 3,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -161,29 +135,61 @@
       "country": "Burkina Faso",
       "title": "Burkina Faso",
       "text": "",
-      "score": 70,
+      "score": 72,
       "need": {
         "value": "$0.66 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "73% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "6 mentions",
-        "n": 6,
+        "value": "4 mentions",
+        "n": 4,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 5,
+      "iso3": "COD",
+      "country": "Democratic Republic of the Congo",
+      "title": "DR Congo",
+      "text": "",
+      "score": 72,
+      "need": {
+        "value": "$2.13 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "47% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "3 mentions",
+        "n": 3,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's DR Congo emergency",
+        "url": "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency",
+        "note": "The UN Refugee Agency, working inside DR Congo and across its borders. The current appeal covers families uprooted by the fighting in the east and the Ebola outbreak there. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-21",
+        "method": "hand"
       }
     },
     {
@@ -196,12 +202,12 @@
       "need": {
         "value": "$1.71 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "66% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "33 mentions",
@@ -214,7 +220,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -227,25 +233,25 @@
       "need": {
         "value": "$0.68 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "80% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "20 mentions",
-        "n": 20,
+        "value": "18 mentions",
+        "n": 18,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -258,12 +264,12 @@
       "need": {
         "value": "$0.99 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "54% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": null,
       "complete": false,
@@ -271,7 +277,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -280,16 +286,16 @@
       "country": "Yemen",
       "title": "Yemen",
       "text": "",
-      "score": 65,
+      "score": 66,
       "need": {
         "value": "$2.16 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "77% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "79 mentions",
@@ -302,7 +308,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -315,12 +321,12 @@
       "need": {
         "value": "$4.06 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "65% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "181 mentions",
@@ -333,7 +339,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -346,25 +352,25 @@
       "need": {
         "value": "$0.85 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "64% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "23 mentions",
-        "n": 23,
+        "value": "24 mentions",
+        "n": 24,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -377,12 +383,12 @@
       "need": {
         "value": "$0.83 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "58% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "10 mentions",
@@ -395,38 +401,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 13,
-      "iso3": "MOZ",
-      "country": "Mozambique",
-      "title": "Mozambique",
-      "text": "",
-      "score": 59,
-      "need": {
-        "value": "$0.53 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "57% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "5 mentions",
-        "n": 5,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -439,12 +414,12 @@
       "need": {
         "value": "$0.58 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "70% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": null,
       "complete": false,
@@ -452,38 +427,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 14,
-      "iso3": "HTI",
-      "country": "Haiti",
-      "title": "Haiti",
-      "text": "",
-      "score": 56,
-      "need": {
-        "value": "$0.88 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "47% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "17 mentions",
-        "n": 17,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -492,16 +436,16 @@
       "country": "Sudan",
       "title": "Sudan",
       "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
-      "score": 56,
+      "score": 57,
       "need": {
         "value": "$2.87 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "49% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "51 mentions",
@@ -514,7 +458,131 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 10,
+      "iso3": "VEN",
+      "country": "Venezuela, Bolivarian Republic of",
+      "title": "Venezuela",
+      "text": "",
+      "score": 57,
+      "need": {
+        "value": "$0.93 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "49% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "29 mentions",
+        "n": 29,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 14,
+      "iso3": "HTI",
+      "country": "Haiti",
+      "title": "Haiti",
+      "text": "",
+      "score": 56,
+      "need": {
+        "value": "$0.88 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "47% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "17 mentions",
+        "n": 17,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 24,
+      "iso3": "CMR",
+      "country": "Cameroon",
+      "title": "Cameroon",
+      "text": "",
+      "score": 55,
+      "need": {
+        "value": "$0.32 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "60% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "9 mentions",
+        "n": 9,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 13,
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "title": "Mozambique",
+      "text": "",
+      "score": 55,
+      "need": {
+        "value": "$0.53 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "57% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "7 mentions",
+        "n": 7,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
       }
     },
     {
@@ -527,12 +595,12 @@
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "96% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "7 mentions",
@@ -545,69 +613,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 10,
-      "iso3": "VEN",
-      "country": "Venezuela, Bolivarian Republic of",
-      "title": "Venezuela",
-      "text": "",
-      "score": 54,
-      "need": {
-        "value": "$0.93 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "49% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "33 mentions",
-        "n": 33,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 24,
-      "iso3": "CMR",
-      "country": "Cameroon",
-      "title": "Cameroon",
-      "text": "",
-      "score": 53,
-      "need": {
-        "value": "$0.32 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "60% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "10 mentions",
-        "n": 10,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -616,29 +622,29 @@
       "country": "Myanmar",
       "title": "Myanmar",
       "text": "",
-      "score": 46,
+      "score": 45,
       "need": {
         "value": "$0.89 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "48% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "50 mentions",
-        "n": 50,
+        "value": "56 mentions",
+        "n": 56,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -647,16 +653,16 @@
       "country": "Colombia",
       "title": "Colombia",
       "text": "",
-      "score": 45,
+      "score": 44,
       "need": {
         "value": "$0.62 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "51% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "31 mentions",
@@ -669,7 +675,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -678,16 +684,16 @@
       "country": "Central African Republic",
       "title": "Central African Republic",
       "text": "",
-      "score": 44,
+      "score": 43,
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "41% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "4 mentions",
@@ -700,7 +706,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -713,56 +719,25 @@
       "need": {
         "value": "$2.30 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "23% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "706 mentions",
-        "n": 706,
+        "value": "680 mentions",
+        "n": 680,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 29,
-      "iso3": "MDG",
-      "country": "Madagascar",
-      "title": "Madagascar",
-      "text": "",
-      "score": 37,
-      "need": {
-        "value": "$0.07 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "6% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "3 mentions",
-        "n": 3,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -775,25 +750,25 @@
       "need": {
         "value": "$0.06 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "91% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "110 mentions",
-        "n": 110,
+        "value": "113 mentions",
+        "n": 113,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -806,12 +781,12 @@
       "need": {
         "value": "$0.71 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "31% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "36 mentions",
@@ -824,7 +799,38 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 29,
+      "iso3": "MDG",
+      "country": "Madagascar",
+      "title": "Madagascar",
+      "text": "",
+      "score": 35,
+      "need": {
+        "value": "$0.07 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "6% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "4 mentions",
+        "n": 4,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
       }
     },
     {
@@ -837,56 +843,25 @@
       "need": {
         "value": "$0.64 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "46% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "44 mentions",
-        "n": 44,
+        "value": "45 mentions",
+        "n": 45,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
-      }
-    },
-    {
-      "no": 35,
-      "iso3": "PAK",
-      "country": "Pakistan",
-      "title": "Pakistan",
-      "text": "",
-      "score": 27,
-      "need": {
-        "value": "$0.06 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "gap": {
-        "value": "54% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-21"
-      },
-      "media": {
-        "value": "77 mentions",
-        "n": 77,
-        "source": "GDELT",
-        "date": "2026-11-21"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -899,12 +874,12 @@
       "need": {
         "value": "$0.08 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "47% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": null,
       "complete": false,
@@ -912,7 +887,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -925,25 +900,56 @@
       "need": {
         "value": "$0.52 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "27% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "36 mentions",
         "n": 36,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 35,
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "title": "Pakistan",
+      "text": "",
+      "score": 26,
+      "need": {
+        "value": "$0.06 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "54% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "93 mentions",
+        "n": 93,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-22"
       }
     },
     {
@@ -956,12 +962,12 @@
       "need": {
         "value": "$0.08 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "44% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": null,
       "complete": false,
@@ -969,7 +975,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -982,12 +988,12 @@
       "need": {
         "value": "$0.05 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "42% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
         "value": "26 mentions",
@@ -1000,7 +1006,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     },
     {
@@ -1009,29 +1015,29 @@
       "country": "Sri Lanka",
       "title": "Sri Lanka",
       "text": "",
-      "score": 20,
+      "score": 21,
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "gap": {
         "value": "6% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "media": {
-        "value": "17 mentions",
-        "n": 17,
+        "value": "16 mentions",
+        "n": 16,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-21"
+        "verified": "2026-11-22"
       }
     }
   ]
