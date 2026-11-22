@@ -10,17 +10,56 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "CMR: fetch failed",
-      "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cha",
-      "AFG: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Afg",
-      "HTI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Hai",
+      "BFA: fetch failed",
+      "TCD: fetch failed",
       "CAF: Unexpected token 'P', \"Parenthese\"... is not valid JSON",
-      "NGA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Nig"
+      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mal",
+      "NGA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Nig",
+      "COD: fetch failed"
     ],
     "links": {
-      "https://donate.unhcr.org/south-sudan": "ok 403, then a real browser got 200",
-      "https://crisisrelief.un.org/donate": "ok 200",
-      "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency": "ok 403, then a real browser got 200"
+      "https://donate.unhcr.org/south-sudan [south sudan]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/product/123 [burkina]": "FAIL fetch 403, then real browser 200, page loaded but the word \"burkina\" was not on it",
+      "https://crisisrelief.un.org/donate [crisis relief]": "ok fetch 200",
+      "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency [congo]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/syria-emergency [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
+      "https://donate.unhcr.org/syria [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
+      "https://donate.unhcr.org/int/en/syria [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
+      "https://donate.unhcr.org/int/en/afghanistan-emergency [afghanistan]": "FAIL fetch 403, then real browser 200, page loaded but the word \"afghanistan\" was not in its title",
+      "https://donate.unhcr.org/afghanistan [afghanistan]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/product/123 [niger]": "FAIL fetch 403, then real browser 200, page loaded but the word \"niger\" was not on it",
+      "https://donate.unhcr.org/Sudan [chad]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/yemen-emergency [yemen]": "ok fetch 403, then real browser 200",
+      "https://crisisrelief.un.org/donate": "ok fetch 200",
+      "https://donate.unhcr.org/int/en/somalia-emergency [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
+      "https://donate.unhcr.org/somalia [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
+      "https://donate.unhcr.org/int/en/somalia [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
+      "https://donate.unhcr.org/int/en/uganda-emergency [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
+      "https://donate.unhcr.org/uganda [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
+      "https://donate.unhcr.org/int/en/uganda [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
+      "https://donate.unhcr.org/int/en/product/123 [mali]": "FAIL fetch 403, then real browser 200, page loaded but the word \"mali\" was not on it",
+      "https://donate.unhcr.org/int/en/venezuela-emergency [venezuela]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/Sudan [sudan]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/haiti-emergency [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
+      "https://donate.unhcr.org/haiti [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
+      "https://donate.unhcr.org/int/en/haiti [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
+      "https://donate.unhcr.org/int/en/mozambique-emergency [mozambique]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/cameroon-emergency [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
+      "https://donate.unhcr.org/cameroon [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
+      "https://donate.unhcr.org/int/en/cameroon [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
+      "https://donate.unhcr.org/int/en/myanmar-emergency [myanmar]": "FAIL fetch 403, then real browser 200, page loaded but the word \"myanmar\" was not on it",
+      "https://donate.unhcr.org/myanmar [myanmar]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/central-african-republic-emergency [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
+      "https://donate.unhcr.org/central-african-republic [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
+      "https://donate.unhcr.org/int/en/central-african-republic [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
+      "https://donate.unhcr.org/int/en/ukraine-emergency [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
+      "https://donate.unhcr.org/ukraine [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
+      "https://donate.unhcr.org/int/en/ukraine [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
+      "https://donate.unhcr.org/int/en/bangladesh-emergency [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
+      "https://donate.unhcr.org/bangladesh [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
+      "https://donate.unhcr.org/int/en/bangladesh [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
+      "https://donate.unhcr.org/int/en/rohingya-emergency [bangladesh]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/lebanon-emergency [lebanon]": "ok fetch 403, then real browser 200"
     }
   },
   "history": [
@@ -215,9 +254,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Afghanistan appeal",
+        "url": "https://donate.unhcr.org/afghanistan",
+        "note": "The UN Refugee Agency, working in Afghanistan. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -239,8 +278,8 @@
         "date": "2026-11-22"
       },
       "media": {
-        "value": "18 mentions",
-        "n": 18,
+        "value": "19 mentions",
+        "n": 19,
         "source": "GDELT",
         "date": "2026-11-22"
       },
@@ -272,9 +311,9 @@
       "media": null,
       "complete": false,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Sudan emergency",
+        "url": "https://donate.unhcr.org/Sudan",
+        "note": "The UN Refugee Agency's Sudan emergency appeal, which also supports the Sudanese refugees who crossed into Chad. Your gift goes to shelter, relief items and protection. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -303,9 +342,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Yemen appeal",
+        "url": "https://donate.unhcr.org/int/en/yemen-emergency",
+        "note": "The UN Refugee Agency, working in Yemen. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -429,6 +468,37 @@
       }
     },
     {
+      "no": 10,
+      "iso3": "VEN",
+      "country": "Venezuela, Bolivarian Republic of",
+      "title": "Venezuela",
+      "text": "",
+      "score": 58,
+      "need": {
+        "value": "$0.93 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "49% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "29 mentions",
+        "n": 29,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Venezuela appeal",
+        "url": "https://donate.unhcr.org/int/en/venezuela-emergency",
+        "note": "The UN Refugee Agency, working in Venezuela. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-22"
+      }
+    },
+    {
       "no": 1,
       "iso3": "SDN",
       "country": "Sudan",
@@ -453,40 +523,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-22"
-      }
-    },
-    {
-      "no": 10,
-      "iso3": "VEN",
-      "country": "Venezuela, Bolivarian Republic of",
-      "title": "Venezuela",
-      "text": "",
-      "score": 57,
-      "need": {
-        "value": "$0.93 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-22"
-      },
-      "gap": {
-        "value": "49% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-22"
-      },
-      "media": {
-        "value": "29 mentions",
-        "n": 29,
-        "source": "GDELT",
-        "date": "2026-11-22"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Sudan emergency",
+        "url": "https://donate.unhcr.org/Sudan",
+        "note": "The UN Refugee Agency, working inside Sudan and in the countries next door. Your gift goes to shelter, water and protection for families forced to flee the war. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -546,9 +585,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Mozambique appeal",
+        "url": "https://donate.unhcr.org/int/en/mozambique-emergency",
+        "note": "The UN Refugee Agency, working in Mozambique. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -670,9 +709,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Myanmar appeal",
+        "url": "https://donate.unhcr.org/myanmar",
+        "note": "The UN Refugee Agency, working in Myanmar. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -725,8 +764,8 @@
         "date": "2026-11-22"
       },
       "media": {
-        "value": "680 mentions",
-        "n": 680,
+        "value": "706 mentions",
+        "n": 706,
         "source": "GDELT",
         "date": "2026-11-22"
       },
@@ -763,9 +802,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "label": "Give to UNHCR's Bangladesh appeal",
+        "url": "https://donate.unhcr.org/int/en/rohingya-emergency",
+        "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
         "verified": "2026-11-22"
       }
     },
@@ -787,39 +826,8 @@
         "date": "2026-11-22"
       },
       "media": {
-        "value": "117 mentions",
-        "n": 117,
-        "source": "GDELT",
-        "date": "2026-11-22"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-22"
-      }
-    },
-    {
-      "no": 29,
-      "iso3": "MDG",
-      "country": "Madagascar",
-      "title": "Madagascar",
-      "text": "",
-      "score": 35,
-      "need": {
-        "value": "$0.07 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-22"
-      },
-      "gap": {
-        "value": "6% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-22"
-      },
-      "media": {
-        "value": "4 mentions",
-        "n": 4,
+        "value": "121 mentions",
+        "n": 121,
         "source": "GDELT",
         "date": "2026-11-22"
       },
@@ -851,6 +859,37 @@
       "media": {
         "value": "45 mentions",
         "n": 45,
+        "source": "GDELT",
+        "date": "2026-11-22"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Lebanon appeal",
+        "url": "https://donate.unhcr.org/int/en/lebanon-emergency",
+        "note": "The UN Refugee Agency, working in Lebanon. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-22"
+      }
+    },
+    {
+      "no": 29,
+      "iso3": "MDG",
+      "country": "Madagascar",
+      "title": "Madagascar",
+      "text": "",
+      "score": 35,
+      "need": {
+        "value": "$0.07 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "gap": {
+        "value": "6% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-22"
+      },
+      "media": {
+        "value": "4 mentions",
+        "n": 4,
         "source": "GDELT",
         "date": "2026-11-22"
       },
@@ -937,8 +976,8 @@
         "date": "2026-11-22"
       },
       "media": {
-        "value": "93 mentions",
-        "n": 93,
+        "value": "98 mentions",
+        "n": 98,
         "source": "GDELT",
         "date": "2026-11-22"
       },
@@ -982,7 +1021,7 @@
       "country": "Nepal",
       "title": "Nepal",
       "text": "",
-      "score": 25,
+      "score": 24,
       "need": {
         "value": "$0.05 billion asked",
         "source": "OCHA FTS",
@@ -994,10 +1033,10 @@
         "date": "2026-11-22"
       },
       "media": {
-        "value": "26 mentions",
-        "n": 26,
+        "value": "31 mentions",
+        "n": 31,
         "source": "GDELT",
-        "date": "2026-11-21"
+        "date": "2026-11-22"
       },
       "complete": true,
       "action": {
