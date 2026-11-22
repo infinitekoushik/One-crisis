@@ -18,5 +18,191 @@
     "note": "The UN Refugee Agency, working inside DR Congo and across its borders. The current appeal covers families uprooted by the fighting in the east and the Ebola outbreak there. It covers displaced people, not every need in the country.",
     "expect": "congo",
     "handChecked": "2026-11-21"
+  },
+  "BFA": {
+    "label": "Give to UNHCR's Sahel emergency appeal",
+    "url": "https://donate.unhcr.org/int/en/product/123",
+    "note": "UNHCR's appeal for the central Sahel, which includes Burkina Faso. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
+    "expect": "burkina"
+  },
+  "NER": {
+    "label": "Give to UNHCR's Sahel emergency appeal",
+    "url": "https://donate.unhcr.org/int/en/product/123",
+    "note": "UNHCR's appeal for the central Sahel, which includes Niger. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
+    "expect": "niger"
+  },
+  "MLI": {
+    "label": "Give to UNHCR's Sahel emergency appeal",
+    "url": "https://donate.unhcr.org/int/en/product/123",
+    "note": "UNHCR's appeal for the central Sahel, which includes Mali. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
+    "expect": "mali"
+  },
+  "SDN": {
+    "label": "Give to UNHCR's Sudan emergency",
+    "url": "https://donate.unhcr.org/Sudan",
+    "note": "The UN Refugee Agency, working inside Sudan and in the countries next door. Your gift goes to shelter, water and protection for families forced to flee the war. It covers displaced people, not every need in the country.",
+    "expect": "sudan"
+  },
+  "TCD": {
+    "label": "Give to UNHCR's Sudan emergency",
+    "url": "https://donate.unhcr.org/Sudan",
+    "note": "The UN Refugee Agency's Sudan emergency appeal, which also supports the Sudanese refugees who crossed into Chad. Your gift goes to shelter, relief items and protection. It covers displaced people, not every need in the country.",
+    "expect": "chad"
+  },
+  "SYR": {
+    "label": "Give to UNHCR's Syria appeal",
+    "url": "https://donate.unhcr.org/int/en/syria-emergency",
+    "note": "The UN Refugee Agency, working in Syria. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "syria",
+    "alts": [
+      "https://donate.unhcr.org/syria",
+      "https://donate.unhcr.org/int/en/syria"
+    ],
+    "inTitle": true
+  },
+  "AFG": {
+    "label": "Give to UNHCR's Afghanistan appeal",
+    "url": "https://donate.unhcr.org/int/en/afghanistan-emergency",
+    "note": "The UN Refugee Agency, working in Afghanistan. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "afghanistan",
+    "alts": [
+      "https://donate.unhcr.org/afghanistan",
+      "https://donate.unhcr.org/int/en/afghanistan"
+    ],
+    "inTitle": true
+  },
+  "YEM": {
+    "label": "Give to UNHCR's Yemen appeal",
+    "url": "https://donate.unhcr.org/int/en/yemen-emergency",
+    "note": "The UN Refugee Agency, working in Yemen. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "yemen",
+    "alts": [
+      "https://donate.unhcr.org/yemen",
+      "https://donate.unhcr.org/int/en/yemen"
+    ],
+    "inTitle": true
+  },
+  "SOM": {
+    "label": "Give to UNHCR's Somalia appeal",
+    "url": "https://donate.unhcr.org/int/en/somalia-emergency",
+    "note": "The UN Refugee Agency, working in Somalia. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "somalia",
+    "alts": [
+      "https://donate.unhcr.org/somalia",
+      "https://donate.unhcr.org/int/en/somalia"
+    ],
+    "inTitle": true
+  },
+  "UGA": {
+    "label": "Give to UNHCR's Uganda appeal",
+    "url": "https://donate.unhcr.org/int/en/uganda-emergency",
+    "note": "The UN Refugee Agency, working in Uganda, which hosts one of the largest refugee populations in Africa. Your gift goes to shelter, relief items and protection for refugees and the communities hosting them. It covers displaced people, not every need in the country.",
+    "expect": "uganda",
+    "alts": [
+      "https://donate.unhcr.org/uganda",
+      "https://donate.unhcr.org/int/en/uganda"
+    ],
+    "inTitle": true
+  },
+  "HTI": {
+    "label": "Give to UNHCR's Haiti appeal",
+    "url": "https://donate.unhcr.org/int/en/haiti-emergency",
+    "note": "The UN Refugee Agency, working in Haiti. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "haiti",
+    "alts": [
+      "https://donate.unhcr.org/haiti",
+      "https://donate.unhcr.org/int/en/haiti"
+    ],
+    "inTitle": true
+  },
+  "MOZ": {
+    "label": "Give to UNHCR's Mozambique appeal",
+    "url": "https://donate.unhcr.org/int/en/mozambique-emergency",
+    "note": "The UN Refugee Agency, working in Mozambique. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "mozambique",
+    "alts": [
+      "https://donate.unhcr.org/mozambique",
+      "https://donate.unhcr.org/int/en/mozambique"
+    ],
+    "inTitle": true
+  },
+  "VEN": {
+    "label": "Give to UNHCR's Venezuela appeal",
+    "url": "https://donate.unhcr.org/int/en/venezuela-emergency",
+    "note": "The UN Refugee Agency, working in Venezuela. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "venezuela",
+    "alts": [
+      "https://donate.unhcr.org/venezuela",
+      "https://donate.unhcr.org/int/en/venezuela"
+    ],
+    "inTitle": true
+  },
+  "UKR": {
+    "label": "Give to UNHCR's Ukraine appeal",
+    "url": "https://donate.unhcr.org/int/en/ukraine-emergency",
+    "note": "The UN Refugee Agency, working in Ukraine. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "ukraine",
+    "alts": [
+      "https://donate.unhcr.org/ukraine",
+      "https://donate.unhcr.org/int/en/ukraine"
+    ],
+    "inTitle": true
+  },
+  "CMR": {
+    "label": "Give to UNHCR's Cameroon appeal",
+    "url": "https://donate.unhcr.org/int/en/cameroon-emergency",
+    "note": "The UN Refugee Agency, working in Cameroon. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "cameroon",
+    "alts": [
+      "https://donate.unhcr.org/cameroon",
+      "https://donate.unhcr.org/int/en/cameroon"
+    ],
+    "inTitle": true
+  },
+  "CAF": {
+    "label": "Give to UNHCR's Central African Republic appeal",
+    "url": "https://donate.unhcr.org/int/en/central-african-republic-emergency",
+    "note": "The UN Refugee Agency, working in Central African Republic. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "central african republic",
+    "alts": [
+      "https://donate.unhcr.org/central-african-republic",
+      "https://donate.unhcr.org/int/en/central-african-republic"
+    ],
+    "inTitle": true
+  },
+  "LBN": {
+    "label": "Give to UNHCR's Lebanon appeal",
+    "url": "https://donate.unhcr.org/int/en/lebanon-emergency",
+    "note": "The UN Refugee Agency, working in Lebanon. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "lebanon",
+    "alts": [
+      "https://donate.unhcr.org/lebanon",
+      "https://donate.unhcr.org/int/en/lebanon"
+    ],
+    "inTitle": true
+  },
+  "MMR": {
+    "label": "Give to UNHCR's Myanmar appeal",
+    "url": "https://donate.unhcr.org/int/en/myanmar-emergency",
+    "note": "The UN Refugee Agency, working in Myanmar. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+    "expect": "myanmar",
+    "alts": [
+      "https://donate.unhcr.org/myanmar",
+      "https://donate.unhcr.org/int/en/myanmar",
+      "https://donate.unhcr.org/int/en/rohingya-emergency",
+      "https://donate.unhcr.org/rohingya"
+    ]
+  },
+  "BGD": {
+    "label": "Give to UNHCR's Bangladesh appeal",
+    "url": "https://donate.unhcr.org/int/en/bangladesh-emergency",
+    "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
+    "expect": "bangladesh",
+    "alts": [
+      "https://donate.unhcr.org/bangladesh",
+      "https://donate.unhcr.org/int/en/bangladesh",
+      "https://donate.unhcr.org/int/en/rohingya-emergency",
+      "https://donate.unhcr.org/rohingya"
+    ]
   }
 }
