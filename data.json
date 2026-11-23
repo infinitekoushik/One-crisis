@@ -10,56 +10,50 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "CMR: fetch failed",
+      "BFA: fetch failed",
+      "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
       "TCD: Unexpected token 'T', \"The specif\"... is not valid JSON",
-      "CAF: Unexpected token 'P', \"Parenthese\"... is not valid JSON",
-      "NGA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Nig",
-      "COD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22DR",
-      "MLI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mal"
+      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
+      "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce",
+      "NGA: fetch failed"
     ],
     "links": {
-      "https://donate.unhcr.org/int/en/product/123 [burkina]": "FAIL fetch 403, then real browser 200, page loaded but the word \"burkina\" was not on it",
+      "https://donate.unhcr.org/int/en/product/123 [sahel]": "FAIL fetch 403, then real browser 200, page loaded but the word \"sahel\" was not in its title",
       "https://crisisrelief.un.org/donate [crisis relief]": "ok fetch 200",
-      "https://donate.unhcr.org/int/en/syria-emergency [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
-      "https://donate.unhcr.org/syria [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
-      "https://donate.unhcr.org/int/en/syria [syria]": "FAIL fetch 403, then real browser 200, page loaded but the word \"syria\" was not in its title",
       "https://donate.unhcr.org/south-sudan [south sudan]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/afghanistan-emergency [afghanistan]": "FAIL fetch 403, then real browser 200, page loaded but the word \"afghanistan\" was not in its title",
-      "https://donate.unhcr.org/afghanistan [afghanistan]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/afghanistan-emergency [afghanistan|afghan|afghans]": "FAIL fetch 403, then real browser 200, page loaded but the word \"afghanistan|afghan|afghans\" was not in its title",
+      "https://donate.unhcr.org/afghanistan [afghanistan|afghan|afghans]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/syria-emergency [syria|syrian|syrians]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency [congo]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/product/123 [niger]": "FAIL fetch 403, then real browser 200, page loaded but the word \"niger\" was not on it",
       "https://donate.unhcr.org/Sudan [chad]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/yemen-emergency [yemen]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/yemen-emergency [yemen|yemeni|yemenis]": "ok fetch 403, then real browser 200",
       "https://crisisrelief.un.org/donate": "ok fetch 200",
-      "https://donate.unhcr.org/int/en/somalia-emergency [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
-      "https://donate.unhcr.org/somalia [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
-      "https://donate.unhcr.org/int/en/somalia [somalia]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia\" was not in its title",
-      "https://donate.unhcr.org/int/en/uganda-emergency [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
-      "https://donate.unhcr.org/uganda [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
-      "https://donate.unhcr.org/int/en/uganda [uganda]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda\" was not in its title",
-      "https://donate.unhcr.org/int/en/product/123 [mali]": "FAIL fetch 403, then real browser 200, page loaded but the word \"mali\" was not on it",
-      "https://donate.unhcr.org/int/en/haiti-emergency [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
-      "https://donate.unhcr.org/haiti [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
-      "https://donate.unhcr.org/int/en/haiti [haiti]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti\" was not in its title",
-      "https://donate.unhcr.org/int/en/venezuela-emergency [venezuela]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/cameroon-emergency [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
-      "https://donate.unhcr.org/cameroon [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
-      "https://donate.unhcr.org/int/en/cameroon [cameroon]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon\" was not in its title",
-      "https://donate.unhcr.org/int/en/mozambique-emergency [mozambique]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/somalia-emergency [somalia|somali|somalis]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia|somali|somalis\" was not in its title",
+      "https://donate.unhcr.org/somalia [somalia|somali|somalis]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia|somali|somalis\" was not in its title",
+      "https://donate.unhcr.org/int/en/somalia [somalia|somali|somalis]": "FAIL fetch 403, then real browser 200, page loaded but the word \"somalia|somali|somalis\" was not in its title",
+      "https://donate.unhcr.org/int/en/uganda-emergency [uganda|ugandan]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda|ugandan\" was not in its title",
+      "https://donate.unhcr.org/uganda [uganda|ugandan]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda|ugandan\" was not in its title",
+      "https://donate.unhcr.org/int/en/uganda [uganda|ugandan]": "FAIL fetch 403, then real browser 200, page loaded but the word \"uganda|ugandan\" was not in its title",
+      "https://donate.unhcr.org/int/en/haiti-emergency [haiti|haitian|haitians]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti|haitian|haitians\" was not in its title",
+      "https://donate.unhcr.org/haiti [haiti|haitian|haitians]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti|haitian|haitians\" was not in its title",
+      "https://donate.unhcr.org/int/en/haiti [haiti|haitian|haitians]": "FAIL fetch 403, then real browser 200, page loaded but the word \"haiti|haitian|haitians\" was not in its title",
+      "https://donate.unhcr.org/int/en/venezuela-emergency [venezuela|venezuelan|venezuelans]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/cameroon-emergency [cameroon|cameroonian]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon|cameroonian\" was not in its title",
+      "https://donate.unhcr.org/cameroon [cameroon|cameroonian]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon|cameroonian\" was not in its title",
+      "https://donate.unhcr.org/int/en/cameroon [cameroon|cameroonian]": "FAIL fetch 403, then real browser 200, page loaded but the word \"cameroon|cameroonian\" was not in its title",
+      "https://donate.unhcr.org/int/en/mozambique-emergency [mozambique|mozambican]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/Sudan [sudan]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/myanmar-emergency [myanmar]": "FAIL fetch 403, then real browser 200, page loaded but the word \"myanmar\" was not on it",
       "https://donate.unhcr.org/myanmar [myanmar]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/central-african-republic-emergency [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
-      "https://donate.unhcr.org/central-african-republic [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
-      "https://donate.unhcr.org/int/en/central-african-republic [central african republic]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic\" was not in its title",
-      "https://donate.unhcr.org/int/en/ukraine-emergency [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
-      "https://donate.unhcr.org/ukraine [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
-      "https://donate.unhcr.org/int/en/ukraine [ukraine]": "FAIL fetch 403, then real browser 200, page loaded but the word \"ukraine\" was not in its title",
+      "https://donate.unhcr.org/int/en/central-african-republic-emergency [central african republic|central african]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic|central african\" was not in its title",
+      "https://donate.unhcr.org/central-african-republic [central african republic|central african]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic|central african\" was not in its title",
+      "https://donate.unhcr.org/int/en/central-african-republic [central african republic|central african]": "FAIL fetch 403, then real browser 200, page loaded but the word \"central african republic|central african\" was not in its title",
       "https://donate.unhcr.org/int/en/bangladesh-emergency [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
       "https://donate.unhcr.org/bangladesh [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
       "https://donate.unhcr.org/int/en/bangladesh [bangladesh]": "FAIL fetch 403, then real browser 200, page loaded but the word \"bangladesh\" was not on it",
       "https://donate.unhcr.org/int/en/rohingya-emergency [bangladesh]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/int/en/lebanon-emergency [lebanon]": "ok fetch 403, then real browser 200"
+      "https://donate.unhcr.org/int/en/ukraine-emergency [ukraine|ukrainian|ukrainians]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/int/en/lebanon-emergency [lebanon|lebanese]": "ok fetch 403, then real browser 200"
     }
   },
   "history": [
@@ -141,37 +135,6 @@
       }
     },
     {
-      "no": 3,
-      "iso3": "SYR",
-      "country": "Syrian Arab Republic",
-      "title": "Syria",
-      "text": "",
-      "score": 74,
-      "need": {
-        "value": "$2.92 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-23"
-      },
-      "gap": {
-        "value": "65% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-23"
-      },
-      "media": {
-        "value": "38 mentions",
-        "n": 38,
-        "source": "GDELT",
-        "date": "2026-11-22"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-23"
-      }
-    },
-    {
       "no": 8,
       "iso3": "SSD",
       "country": "South Sudan",
@@ -230,6 +193,37 @@
         "label": "Give to UNHCR's Afghanistan appeal",
         "url": "https://donate.unhcr.org/afghanistan",
         "note": "The UN Refugee Agency, working in Afghanistan. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-23"
+      }
+    },
+    {
+      "no": 3,
+      "iso3": "SYR",
+      "country": "Syrian Arab Republic",
+      "title": "Syria",
+      "text": "",
+      "score": 71,
+      "need": {
+        "value": "$2.92 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-23"
+      },
+      "gap": {
+        "value": "65% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-23"
+      },
+      "media": {
+        "value": "50 mentions",
+        "n": 50,
+        "source": "GDELT",
+        "date": "2026-11-23"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Syria appeal",
+        "url": "https://donate.unhcr.org/int/en/syria-emergency",
+        "note": "The UN Refugee Agency, working in Syria. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-23"
       }
     },
@@ -725,7 +719,7 @@
       "country": "Colombia",
       "title": "Colombia",
       "text": "",
-      "score": 41,
+      "score": 42,
       "need": {
         "value": "$0.62 billion asked",
         "source": "OCHA FTS",
@@ -747,6 +741,37 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-23"
+      }
+    },
+    {
+      "no": 17,
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "title": "Bangladesh",
+      "text": "",
+      "score": 40,
+      "need": {
+        "value": "$0.71 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-23"
+      },
+      "gap": {
+        "value": "31% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-23"
+      },
+      "media": {
+        "value": "42 mentions",
+        "n": 42,
+        "source": "GDELT",
+        "date": "2026-11-23"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Bangladesh appeal",
+        "url": "https://donate.unhcr.org/int/en/rohingya-emergency",
+        "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
         "verified": "2026-11-23"
       }
     },
@@ -775,40 +800,9 @@
       },
       "complete": true,
       "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-23"
-      }
-    },
-    {
-      "no": 17,
-      "iso3": "BGD",
-      "country": "Bangladesh",
-      "title": "Bangladesh",
-      "text": "",
-      "score": 38,
-      "need": {
-        "value": "$0.71 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-23"
-      },
-      "gap": {
-        "value": "31% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-23"
-      },
-      "media": {
-        "value": "42 mentions",
-        "n": 42,
-        "source": "GDELT",
-        "date": "2026-11-23"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give to UNHCR's Bangladesh appeal",
-        "url": "https://donate.unhcr.org/int/en/rohingya-emergency",
-        "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
+        "label": "Give to UNHCR's Ukraine appeal",
+        "url": "https://donate.unhcr.org/int/en/ukraine-emergency",
+        "note": "The UN Refugee Agency, working in Ukraine. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
         "verified": "2026-11-23"
       }
     },
@@ -923,10 +917,10 @@
         "date": "2026-11-23"
       },
       "media": {
-        "value": "38 mentions",
-        "n": 38,
+        "value": "44 mentions",
+        "n": 44,
         "source": "GDELT",
-        "date": "2026-11-22"
+        "date": "2026-11-23"
       },
       "complete": true,
       "action": {
@@ -1025,7 +1019,7 @@
       "country": "Nepal",
       "title": "Nepal",
       "text": "",
-      "score": 20,
+      "score": 21,
       "need": {
         "value": "$0.05 billion asked",
         "source": "OCHA FTS",
