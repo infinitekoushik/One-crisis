@@ -88,6 +88,7 @@ const viaBrowser = async url => {
     const ctx = await browser.newContext({ locale: 'en-US', userAgent: BROWSER['user-agent'] });
     const page = await ctx.newPage();
     const r = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
     await page.waitForTimeout(1500);
     const text = (await page.content()).toLowerCase();
     await ctx.close();
@@ -113,7 +114,8 @@ const getPage = async url => {
   pages.set(url, p);
   return p;
 };
-const word = w => new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+// expect may list alternatives with | (for example "ukraine|ukrainian", since page titles often use the adjective).
+const word = w => new RegExp('\\b(' + w.split('|').map(x => x.trim().replace(/[.*+?^${}()\[\]\\]/g, '\\$&')).join('|') + ')\\b', 'i');
 const alive = async a => {
   const p = await getPage(a.url);
   const named = !a.expect || word(a.expect).test(a.inTitle ? p.title : p.text);
