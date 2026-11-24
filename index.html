@@ -191,7 +191,7 @@ function board(d){
 })();
 $('pv').onclick=()=>step(-1);$('nx').onclick=()=>step(1);
 addEventListener('keydown',e=>{if($('board').hidden){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});
-$('sh').onclick=async()=>{const c=window.CUR;if(!c)return;const i=ORDER.indexOf(c)+1,u=location.href.split('#')[0]+'#'+c.iso3;
+$('sh').onclick=async()=>{const c=window.CUR;if(!c)return;const i=ORDER.indexOf(c)+1,u=location.origin+'/c/'+c.iso3;
  const t='Crisis #'+String(c.no).padStart(7,'0')+': '+c.title+'. Silence rank '+i+' of '+ORDER.length+'. Almost nobody is talking about it.';
  try{if(navigator.share){await navigator.share({title:'ONE',text:t,url:u});return}}catch(e){if(e.name==='AbortError')return}
  try{await navigator.clipboard.writeText(t+' '+u);$('sh').textContent='Link copied';setTimeout(()=>$('sh').textContent='Share',2200)}catch(e){prompt('Copy this link',u)}};
