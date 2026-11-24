@@ -17,9 +17,13 @@ jobs:
         continue-on-error: true
       - run: npx playwright install --with-deps chromium
         continue-on-error: true
+      - run: sudo apt-get install -y fonts-dejavu-core
+        continue-on-error: true
       - run: node build-data.mjs
+      - run: node build-cards.mjs
+        continue-on-error: true
       - run: |
           git config user.name "one-bot"
           git config user.email "bot@onecrisis.earth"
-          git add data.json
+          git add data.json c
           git diff --cached --quiet || (git commit -m "daily data" && git push)
