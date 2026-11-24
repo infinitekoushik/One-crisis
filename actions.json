@@ -24,21 +24,30 @@
     "url": "https://donate.unhcr.org/int/en/product/123",
     "note": "UNHCR's appeal for the central Sahel, which includes Burkina Faso. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
     "expect": "sahel",
-    "inTitle": true
+    "inTitle": true,
+    "alts": [
+      "https://donate.unhcr.org/africa/en/product/91"
+    ]
   },
   "NER": {
     "label": "Give to UNHCR's Sahel emergency appeal",
     "url": "https://donate.unhcr.org/int/en/product/123",
     "note": "UNHCR's appeal for the central Sahel, which includes Niger. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
     "expect": "sahel",
-    "inTitle": true
+    "inTitle": true,
+    "alts": [
+      "https://donate.unhcr.org/africa/en/product/91"
+    ]
   },
   "MLI": {
     "label": "Give to UNHCR's Sahel emergency appeal",
     "url": "https://donate.unhcr.org/int/en/product/123",
     "note": "UNHCR's appeal for the central Sahel, which includes Mali. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
     "expect": "sahel",
-    "inTitle": true
+    "inTitle": true,
+    "alts": [
+      "https://donate.unhcr.org/africa/en/product/91"
+    ]
   },
   "SDN": {
     "label": "Give to UNHCR's Sudan emergency",
