@@ -119,7 +119,7 @@ const word = w => new RegExp('\\b(' + w.split('|').map(x => x.trim().replace(/[.
 const alive = async a => {
   const p = await getPage(a.url);
   const named = !a.expect || word(a.expect).test(a.inTitle ? p.title : p.text);
-  dbg.links[a.url + (a.expect ? ' [' + a.expect + ']' : '')] = (p.ok && named ? 'ok ' : 'FAIL ') + p.how + (p.ok && !named ? ', page loaded but the word "' + a.expect + '" was not ' + (a.inTitle ? 'in its title' : 'on it') : '');
+  dbg.links[a.url + (a.expect ? ' [' + a.expect + ']' : '')] = (p.ok && named ? 'ok ' : 'FAIL ') + p.how + (p.ok && !named ? ', page loaded but the word "' + a.expect + '" was not ' + (a.inTitle ? 'in its title' : 'on it') + '. Title seen: "' + p.title.slice(0, 80) + '"' : '');
   return p.ok && named;
 };
 // Some sites turn even a real browser away. For those, a link checked by hand (handChecked in actions.json) is shown honestly as "Checked by hand" for 45 days, then it falls back.
