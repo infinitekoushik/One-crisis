@@ -112,5 +112,69 @@
     "url": "https://donate.unhcr.org/int/en/rohingya-emergency",
     "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
     "expect": "bangladesh"
+  },
+  "SOM": {
+    "label": "Give to WFP's Somalia hunger appeal",
+    "url": "https://www.wfp.org/support-us/stories/somalia-hunger-appeal",
+    "note": "The UN World Food Programme, the world's largest humanitarian agency, delivering emergency food, cash and nutrition support in Somalia. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "somalia|somali",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/somalia"
+    ]
+  },
+  "HTI": {
+    "label": "Give to WFP's Haiti hunger appeal",
+    "url": "https://www.wfp.org/support-us/stories/haiti",
+    "note": "The UN World Food Programme, the world's largest humanitarian agency, delivering food aid and cash support in Haiti, where gangs and displacement are driving hunger. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "haiti|haitian",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/haiti-hunger-appeal"
+    ]
+  },
+  "UGA": {
+    "label": "Give to WFP's Uganda appeal",
+    "url": "https://www.wfp.org/support-us/stories/uganda",
+    "note": "The UN World Food Programme, feeding refugees and the communities hosting them in Uganda. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "uganda|ugandan",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/uganda-hunger-appeal",
+      "https://www.wfp.org/support-us/stories/uganda-refugees"
+    ]
+  },
+  "CMR": {
+    "label": "Give to WFP's Cameroon appeal",
+    "url": "https://www.wfp.org/support-us/stories/cameroon",
+    "note": "The UN World Food Programme, delivering food assistance in Cameroon. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "cameroon|cameroonian",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/cameroon-hunger-appeal"
+    ]
+  },
+  "CAF": {
+    "label": "Give to WFP's Central African Republic appeal",
+    "url": "https://www.wfp.org/support-us/stories/central-african-republic",
+    "note": "The UN World Food Programme, delivering food assistance in the Central African Republic. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "central african republic|central african",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/central-african-republic-hunger-appeal"
+    ]
+  },
+  "PSE": {
+    "label": "Give to WFP's Gaza and Palestine appeal",
+    "url": "https://www.wfp.org/support-us/stories/gaza",
+    "note": "The UN World Food Programme, delivering emergency food in Gaza and the West Bank. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
+    "expect": "gaza|palestine|palestinian",
+    "inTitle": true,
+    "alts": [
+      "https://www.wfp.org/support-us/stories/palestine",
+      "https://www.wfp.org/support-us/stories/gaza-hunger-appeal",
+      "https://www.wfp.org/support-us/stories/palestine-hunger-appeal",
+      "https://www.wfp.org/support-us/stories/state-of-palestine"
+    ]
   }
 }
