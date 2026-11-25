@@ -10,12 +10,12 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "CMR: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cam",
       "BFA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Bur",
       "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
       "TCD: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Cha",
-      "AFG: fetch failed",
-      "MMR: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Mya"
+      "AFG: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Afg",
+      "HTI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Hai",
+      "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz"
     ],
     "links": {
       "https://donate.unhcr.org/south-sudan [south sudan]": "ok fetch 403, then real browser 200",
@@ -25,26 +25,13 @@
       "https://donate.unhcr.org/int/en/yemen-emergency [yemen|yemeni|yemenis]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/Sudan [chad]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency [congo]": "ok fetch 403, then real browser 200",
-      "https://www.wfp.org/support-us/stories/gaza [gaza|palestine|palestinian]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/palestine [gaza|palestine|palestinian]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/gaza-hunger-appeal [gaza|palestine|palestinian]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/palestine-hunger-appeal [gaza|palestine|palestinian]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/state-of-palestine [gaza|palestine|palestinian]": "FAIL fetch 404",
-      "https://crisisrelief.un.org/donate [crisis relief]": "ok fetch 200",
-      "https://www.wfp.org/support-us/stories/uganda [uganda|ugandan]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/uganda-hunger-appeal [uganda|ugandan]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/uganda-refugees [uganda|ugandan]": "FAIL fetch 404",
+      "https://crisisrelief.un.org/donate": "ok fetch 200",
       "https://www.wfp.org/support-us/stories/somalia-hunger-appeal [somalia|somali]": "ok fetch 200",
       "https://donate.unhcr.org/int/en/mozambique-emergency [mozambique|mozambican]": "ok fetch 403, then real browser 200",
-      "https://www.wfp.org/support-us/stories/cameroon [cameroon|cameroonian]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/cameroon-hunger-appeal [cameroon|cameroonian]": "FAIL fetch 404",
       "https://www.wfp.org/support-us/stories/haiti [haiti|haitian]": "ok fetch 200",
       "https://donate.unhcr.org/Sudan [sudan]": "ok fetch 403, then real browser 200",
-      "https://crisisrelief.un.org/donate": "ok fetch 200",
       "https://donate.unhcr.org/myanmar [myanmar]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/venezuela-emergency [venezuela|venezuelan|venezuelans]": "ok fetch 403, then real browser 200",
-      "https://www.wfp.org/support-us/stories/central-african-republic [central african republic|central african]": "FAIL fetch 404",
-      "https://www.wfp.org/support-us/stories/central-african-republic-hunger-appeal [central african republic|central african]": "FAIL fetch 404",
       "https://donate.unhcr.org/int/en/lebanon-emergency [lebanon|lebanese]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/ukraine-emergency [ukraine|ukrainian|ukrainians]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/rohingya-emergency [bangladesh]": "ok fetch 403, then real browser 200"
@@ -173,7 +160,7 @@
       "country": "Burkina Faso",
       "title": "Burkina Faso",
       "text": "",
-      "score": 74,
+      "score": 71,
       "need": {
         "value": "$0.66 billion asked",
         "source": "OCHA FTS",
@@ -185,10 +172,10 @@
         "date": "2026-11-25"
       },
       "media": {
-        "value": "4 mentions",
-        "n": 4,
+        "value": "9 mentions",
+        "n": 9,
         "source": "GDELT",
-        "date": "2026-11-24"
+        "date": "2026-11-25"
       },
       "complete": true,
       "action": {
@@ -366,10 +353,10 @@
         "date": "2026-11-25"
       },
       "media": {
-        "value": "317 mentions",
-        "n": 317,
+        "value": "475 mentions",
+        "n": 475,
         "source": "GDELT",
-        "date": "2026-11-24"
+        "date": "2026-11-25"
       },
       "complete": true,
       "action": {
@@ -690,7 +677,7 @@
       "country": "Central African Republic",
       "title": "Central African Republic",
       "text": "",
-      "score": 45,
+      "score": 46,
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
@@ -840,6 +827,37 @@
       }
     },
     {
+      "no": 29,
+      "iso3": "MDG",
+      "country": "Madagascar",
+      "title": "Madagascar",
+      "text": "",
+      "score": 37,
+      "need": {
+        "value": "$0.07 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-25"
+      },
+      "gap": {
+        "value": "6% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-25"
+      },
+      "media": {
+        "value": "5 mentions",
+        "n": 5,
+        "source": "GDELT",
+        "date": "2026-11-24"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give through UN Crisis Relief",
+        "url": "https://crisisrelief.un.org/donate",
+        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
+        "verified": "2026-11-25"
+      }
+    },
+    {
       "no": 30,
       "iso3": "VNM",
       "country": "Viet Nam",
@@ -861,37 +879,6 @@
         "n": 290,
         "source": "GDELT",
         "date": "2026-11-25"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give through UN Crisis Relief",
-        "url": "https://crisisrelief.un.org/donate",
-        "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-25"
-      }
-    },
-    {
-      "no": 29,
-      "iso3": "MDG",
-      "country": "Madagascar",
-      "title": "Madagascar",
-      "text": "",
-      "score": 36,
-      "need": {
-        "value": "$0.07 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-25"
-      },
-      "gap": {
-        "value": "6% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-25"
-      },
-      "media": {
-        "value": "5 mentions",
-        "n": 5,
-        "source": "GDELT",
-        "date": "2026-11-24"
       },
       "complete": true,
       "action": {
