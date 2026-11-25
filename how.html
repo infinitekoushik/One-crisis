@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How ONE works</title>
+<meta name="description" content="Where every number on ONE comes from, how the Silence score is built, and what the donation links do and do not mean.">
+<link rel="canonical" href="https://onecrisis.earth/how">
+<meta property="og:title" content="How ONE works">
+<meta property="og:description" content="Where every number on ONE comes from, how the Silence score is built, and what the donation links do and do not mean.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://onecrisis.earth/how">
+<meta property="og:image" content="https://onecrisis.earth/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://onecrisis.earth/og.png">
+<style>
+*{box-sizing:border-box;border-radius:0}
+html{background:#000;color:#e9e6df}
+body{margin:0;font:18px/1.62 'Iowan Old Style','Palatino Linotype',Georgia,serif}
+.mono{font-family:ui-monospace,'Cascadia Mono',Consolas,monospace;font-size:13px;color:#8a8780;letter-spacing:.02em}
+a{color:#e9e6df;text-underline-offset:3px}
+a:focus-visible{outline:2px solid #e8262d;outline-offset:3px}
+header{display:flex;justify-content:space-between;gap:16px;padding:18px 24px}
+main{max-width:70ch;margin:0 auto;padding:40px 24px 96px}
+.bar{width:96px;height:10px;background:#e8262d;margin:0 0 28px}
+h1{font-weight:400;font-size:clamp(38px,7vw,64px);line-height:1.04;margin:0 0 22px}
+.lede{font-size:21px;line-height:1.5;margin:0 0 36px}
+h2{font-weight:400;font-size:clamp(26px,4vw,34px);line-height:1.15;margin:64px 0 14px;padding-top:20px;border-top:1px solid #3a3935}
+h2 .mono{display:block;color:#e8262d;margin-bottom:8px}
+p{margin:0 0 16px}
+.live{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));border-top:1px solid #e9e6df;border-bottom:1px solid #3a3935;margin:0 0 8px}
+.live div{padding:14px 14px 14px 0}
+.live b{display:block;font-weight:400;font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;font-size:30px;line-height:1.1;color:#e9e6df;white-space:nowrap}
+.live b.d{font-size:22px;padding-top:7px;margin-bottom:-1px}
+.parts{margin:20px 0;border-top:1px solid #3a3935}
+.parts div{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #3a3935}
+.parts b{font-weight:400;font-size:30px;line-height:1.1}
+.parts p{margin:0}
+.src{display:grid;grid-template-columns:150px 1fr;gap:6px 16px;margin:20px 0;border-top:1px solid #3a3935}
+.src dt{padding:12px 0 0;color:#8a8780}
+.src dd{margin:0;padding:12px 0;border-bottom:1px solid #3a3935}
+.src dt,.src dd{font-size:16px;line-height:1.5}
+.note{border-left:4px solid #e8262d;padding:2px 0 2px 16px;margin:24px 0}
+footer{padding:0 24px 40px;max-width:70ch;margin:0 auto}
+@media(max-width:560px){body{font-size:17px}.src{grid-template-columns:1fr}.src dt{padding-bottom:0;border-bottom:0}.parts div{grid-template-columns:62px 1fr}}
+</style></head>
+<body>
+<header class="mono"><span>ONE / onecrisis.earth</span><a href="/">Back to the globe</a></header>
+<main>
+<div class="bar"></div>
+<h1>How this works.</h1>
+<p class="lede">ONE ranks humanitarian crises by how quiet the world is about them. Every number has a named source and a date. Here is exactly where they come from, and where they stop being reliable.</p>
+
+<div id="live" class="live mono" hidden></div>
+<p class="mono" style="margin:0 0 0">These figures are read from the site&rsquo;s own data files when you open this page.</p>
+
+<h2><span class="mono">01 / THE SCORE</span>The Silence score</h2>
+<p>Each crisis gets a score from 0 to 100. A high score means a big need, a lot of it still unfunded, and very little news about it. Three parts, weighted like this:</p>
+<div class="parts">
+<div><b>40%</b><p><strong>How big the need is.</strong> The money the UN-coordinated appeal asks for this year.</p></div>
+<div><b>30%</b><p><strong>How much is unfunded.</strong> The share of that ask that has not been paid in.</p></div>
+<div><b>30%</b><p><strong>How little the news covers it.</strong> Articles about the crisis in the last 7 days. Fewer articles means a higher score.</p></div>
+</div>
+<p>Each part is ranked against every other crisis on the board, so a score is a comparison, not a percentage of anything. A 70 means &ldquo;quieter and needier than most of the crises here.&rdquo; It does not mean 70 percent of anything is wrong.</p>
+<div class="note"><p><strong>The board is not every crisis on earth.</strong> It is the countries that have a single-country UN appeal listed in OCHA&rsquo;s Financial Tracking Service this year. Appeals that span many countries are skipped, because they are not one country&rsquo;s crisis. A crisis with no appeal cannot appear here, and that says nothing about whether it is serious.</p></div>
+<p>If a number could not be loaded for a crisis, the score uses the parts we do have and reweights them. A missing figure is shown as missing, never guessed.</p>
+
+<h2><span class="mono">02 / THE NUMBERS</span>Where each number comes from</h2>
+<dl class="src">
+<dt class="mono">Money asked</dt><dd>OCHA Financial Tracking Service, the UN&rsquo;s public record of appeals and funding. Refreshed every day.</dd>
+<dt class="mono">Percent unfunded</dt><dd>The same service. Funding records are reported by donors and can lag by days or weeks, so a gap can look bigger than it is.</dd>
+<dt class="mono">News mentions</dt><dd>GDELT, a free database of news articles from around the world. We count articles from the last 7 days that mention the country together with words like crisis, humanitarian, conflict or famine. It counts articles, not quality, and a keyword search can miss or over-count. When GDELT is busy and fails, the site keeps the last good number and shows its own older date.</dd>
+</dl>
+<p>All of this is free public data. Nothing is bought, scraped from behind a login, or estimated by us.</p>
+
+<h2><span class="mono">03 / THE STORIES</span>Where the stories come from</h2>
+<p>Each crisis has a short story written by hand from named sources: UN agencies, OCHA, ACAPS, IFRC, UNHCR, UNICEF and news reports. Every source is listed under the story. Numbers in the text have to appear in a source we list.</p>
+<p>Once a month an automatic audit opens a checklist. It reloads every source link, flags stories whose newest source has gone stale, and flags any dollar figure that no longer matches the live OCHA ask. A person then reads each story again and rewrites what changed. The date the stories were last checked is shown at the top of this page.</p>
+
+<h2><span class="mono">04 / THE LINKS</span>The &ldquo;what you can do&rdquo; links</h2>
+<p>ONE never touches your money. Every link goes to the organization&rsquo;s own donation page. We add no affiliate codes and no tracking tags to any of them.</p>
+<p>There are two kinds of link:</p>
+<dl class="src">
+<dt class="mono">The general link</dt><dd>UN Crisis Relief, run by OCHA, the UN humanitarian office. Gifts go into UN pooled funds that pay local and international aid groups. It is not tied to one country.</dd>
+<dt class="mono">A country link</dt><dd>A page about that specific place, from UNHCR (the UN Refugee Agency) for displacement crises, or the UN World Food Programme for hunger crises. Each note on the site says what that organization covers. UNHCR helps displaced people and WFP feeds hungry people, so neither covers every need in a country.</dd>
+</dl>
+<p><strong>How a link earns the label &ldquo;Link checked.&rdquo;</strong> Every day a robot opens the page in a real browser, the way a person would. The link only counts if the page loads and the country&rsquo;s name is in the page. If it does not, the crisis falls back to the general link, and a link that fails too is not shown at all.</p>
+<p><strong>What &ldquo;Checked by hand&rdquo; means.</strong> A few sites turn robots away. For those, a person opened the page and confirmed it, and the card shows that date instead. After 45 days without a new check, it falls back to the general link by itself.</p>
+<div class="note"><p><strong>What a check proves, and what it does not.</strong> It proves the page exists today and is about that place. It does not rate the organization, its costs, or how well it spends money. Do your own checking before you give, as with any charity.</p></div>
+<p>Some crises have only the general link. That is on purpose: where no verified page for that country exists, a general link that works is better than a country link we cannot stand behind.</p>
+
+<h2><span class="mono">05 / THE LIMITS</span>What ONE does not do</h2>
+<p>It does not measure suffering. It measures money, appeals and news attention, which are only shadows of what people are living through. It does not judge any government, group or organization. It does not tell you where to give. It shows you a gap and gives you a way to act on it.</p>
+
+<h2><span class="mono">06 / THE CODE</span>Check our work</h2>
+<p>The whole site is public: the code, the data files, the stories and the list of links. Found a wrong number, a dead link or a claim you can disprove? <a href="https://github.com/infinitekoushik/One-crisis/issues">Open an issue on GitHub</a>. Corrections are welcome and get fixed in the open.</p>
+<p><a href="https://github.com/infinitekoushik/One-crisis">github.com/infinitekoushik/One-crisis</a></p>
+</main>
+<footer class="mono">Data: OCHA FTS, GDELT. Stories: sources listed on each crisis. Basemap: Esri. <a href="/">Back to the globe</a></footer>
+<script>
+(async()=>{
+ try{
+  const [d,s]=await Promise.all([fetch('data.json').then(r=>r.json()),fetch('stories.json').then(r=>r.json())]);
+  const cs=d.crises||[],own=cs.filter(c=>c.action&&c.action.url&&!/crisisrelief\.un\.org/.test(c.action.url)).length;
+  const srcs=Object.values(s.stories||{}).reduce((n,x)=>n+((x.sources||[]).length),0);
+  const cells=[[String(cs.length),'crises on the board'],[String(own),'with a country page'],[String(srcs),'story sources listed'],[d.updated||'unknown','data updated'],[s.asOf||'unknown','stories last checked']];
+  const box=document.getElementById('live');
+  cells.forEach(([n,l])=>{const c=document.createElement('div'),b=document.createElement('b');b.textContent=n;if(n.length>5)b.className='d';c.append(b,l);box.append(c)});
+  box.hidden=false;
+ }catch(e){}
+})();
+</script>
+</body></html>
