@@ -184,7 +184,7 @@ function board(d){
  const d=window.DATA=await (await fetch('data.json?'+Date.now())).json();
  try{window.STORIES=await (await fetch('stories.json?'+Date.now())).json()}catch(e){window.STORIES={stories:{}}}
  $('meth').textContent=d.method||'';
- $('foot').textContent=d.updated?'Data updated '+d.updated+'. Sources: OCHA FTS, GDELT, ReliefWeb. Basemap: Esri.':'Waiting for the first data run. Basemap: Esri.';
+ $('foot').textContent=d.updated?'Data updated '+d.updated+'. Sources: OCHA FTS, GDELT, ReliefWeb. Basemap: Esri.':'Waiting for the first data run. Basemap: Esri.';{const a=document.createElement('a');a.href='/how';a.textContent=' How this works.';$('foot').append(a)}
  board(d);outlineAll();
  const c=d.crises.find(x=>x.iso3===location.hash.slice(1).toUpperCase())||d.crises.find(x=>x.iso3===d.spotlight)||d.crises[0];
  if(c)focus(c);else{$('name').textContent='No crises loaded'}
