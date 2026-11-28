@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "method": "Silence score, 0 to 100: 40% how big the need is (OCHA FTS requirements), 30% how much of it is unfunded (OCHA FTS), 30% how little the news covers it (GDELT, 7 days). Each part is ranked against every other crisis on the board. If a figure could not be loaded for a crisis, the score uses the parts we do have.",
-  "spotlight": "HND",
+  "spotlight": "SDN",
   "debug": {
     "skippedRegional": [
       "Sudan Emergency: Regional Refugee Response Plan 2026",
@@ -10,17 +10,17 @@
       "Syrian Arab Republic Regional Refugee and Resilience Plan (3RP) 2026"
     ],
     "gdeltErrors": [
-      "BFA: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Bur",
-      "COL: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Col",
+      "COL: fetch failed",
       "TCD: Unexpected token 'T', \"The specif\"... is not valid JSON",
-      "HTI: fetch failed",
+      "HTI: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Hai",
       "MOZ: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=%22Moz",
-      "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce"
+      "CAF: 429 https://api.gdeltproject.org/api/v2/doc/doc?query=(%22Ce",
+      "COD: fetch failed"
     ],
     "links": {
       "https://donate.unhcr.org/africa/en/product/91 [sahel]": "ok fetch 403, then real browser 200",
-      "https://donate.unhcr.org/afghanistan [afghanistan|afghan|afghans]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/syria-emergency [syria|syrian|syrians]": "ok fetch 403, then real browser 200",
+      "https://donate.unhcr.org/afghanistan [afghanistan|afghan|afghans]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/south-sudan [south sudan]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency [congo]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/Sudan [chad]": "ok fetch 403, then real browser 200",
@@ -28,9 +28,9 @@
       "https://crisisrelief.un.org/donate": "ok fetch 200",
       "https://www.wfp.org/support-us/stories/somalia-hunger-appeal [somalia|somali]": "ok fetch 200",
       "https://donate.unhcr.org/Sudan [sudan]": "ok fetch 403, then real browser 200",
-      "https://www.wfp.org/support-us/stories/haiti [haiti|haitian]": "ok fetch 200",
       "https://donate.unhcr.org/myanmar [myanmar]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/mozambique-emergency [mozambique|mozambican]": "ok fetch 403, then real browser 200",
+      "https://www.wfp.org/support-us/stories/haiti [haiti|haitian]": "ok fetch 200",
       "https://donate.unhcr.org/int/en/venezuela-emergency [venezuela|venezuelan|venezuelans]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/rohingya-emergency [bangladesh]": "ok fetch 403, then real browser 200",
       "https://donate.unhcr.org/int/en/ukraine-emergency [ukraine|ukrainian|ukrainians]": "ok fetch 403, then real browser 200",
@@ -97,6 +97,10 @@
     {
       "date": "2026-11-27",
       "iso3": "HND"
+    },
+    {
+      "date": "2026-11-28",
+      "iso3": "SDN"
     }
   ],
   "crises": [
@@ -106,60 +110,60 @@
       "country": "Burkina Faso",
       "title": "Burkina Faso",
       "text": "",
-      "score": 74,
+      "score": 71,
       "need": {
         "value": "$0.66 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "73% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "10 mentions",
-        "n": 10,
+        "value": "17 mentions",
+        "n": 17,
         "source": "GDELT",
-        "date": "2026-11-26"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's Sahel emergency appeal",
         "url": "https://donate.unhcr.org/africa/en/product/91",
         "note": "UNHCR's appeal for the central Sahel, which includes Burkina Faso. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
-      "no": 6,
-      "iso3": "AFG",
-      "country": "Afghanistan",
-      "title": "Afghanistan",
+      "no": 18,
+      "iso3": "NER",
+      "country": "Niger",
+      "title": "Niger",
       "text": "",
       "score": 71,
       "need": {
-        "value": "$1.71 billion asked",
+        "value": "$0.68 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
-        "value": "66% unfunded",
+        "value": "80% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "87 mentions",
-        "n": 87,
+        "value": "33 mentions",
+        "n": 33,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
-        "label": "Give to UNHCR's Afghanistan appeal",
-        "url": "https://donate.unhcr.org/afghanistan",
-        "note": "The UN Refugee Agency, working in Afghanistan. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "label": "Give to UNHCR's Sahel emergency appeal",
+        "url": "https://donate.unhcr.org/africa/en/product/91",
+        "note": "UNHCR's appeal for the central Sahel, which includes Niger. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-28"
       }
     },
     {
@@ -172,12 +176,12 @@
       "need": {
         "value": "$2.92 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "65% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "149 mentions",
@@ -190,38 +194,38 @@
         "label": "Give to UNHCR's Syria appeal",
         "url": "https://donate.unhcr.org/int/en/syria-emergency",
         "note": "The UN Refugee Agency, working in Syria. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
-      "no": 18,
-      "iso3": "NER",
-      "country": "Niger",
-      "title": "Niger",
+      "no": 6,
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "title": "Afghanistan",
       "text": "",
       "score": 70,
       "need": {
-        "value": "$0.68 billion asked",
+        "value": "$1.71 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
-        "value": "80% unfunded",
+        "value": "66% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "26 mentions",
-        "n": 26,
+        "value": "118 mentions",
+        "n": 118,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
-        "label": "Give to UNHCR's Sahel emergency appeal",
-        "url": "https://donate.unhcr.org/africa/en/product/91",
-        "note": "UNHCR's appeal for the central Sahel, which includes Niger. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "label": "Give to UNHCR's Afghanistan appeal",
+        "url": "https://donate.unhcr.org/afghanistan",
+        "note": "The UN Refugee Agency, working in Afghanistan. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-28"
       }
     },
     {
@@ -230,29 +234,29 @@
       "country": "South Sudan",
       "title": "South Sudan",
       "text": "",
-      "score": 69,
+      "score": 70,
       "need": {
         "value": "$1.46 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "59% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "36 mentions",
-        "n": 36,
+        "value": "46 mentions",
+        "n": 46,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's South Sudan appeal",
         "url": "https://donate.unhcr.org/south-sudan",
         "note": "The UN Refugee Agency, with teams inside South Sudan and in the countries next door. Your gift goes to shelter, emergency supplies and protection for people forced from their homes. It covers displaced families, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -265,25 +269,25 @@
       "need": {
         "value": "$2.13 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "47% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "15 mentions",
-        "n": 15,
+        "value": "20 mentions",
+        "n": 20,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's DR Congo emergency",
         "url": "https://donate.unhcr.org/int/en/democratic-republic-congo-emergency",
         "note": "The UN Refugee Agency, working inside DR Congo and across its borders. The current appeal covers families uprooted by the fighting in the east and the Ebola outbreak there. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -296,12 +300,12 @@
       "need": {
         "value": "$0.99 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "54% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": null,
       "complete": false,
@@ -309,7 +313,7 @@
         "label": "Give to UNHCR's Sudan emergency",
         "url": "https://donate.unhcr.org/Sudan",
         "note": "The UN Refugee Agency's Sudan emergency appeal, which also supports the Sudanese refugees who crossed into Chad. Your gift goes to shelter, relief items and protection. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -322,12 +326,12 @@
       "need": {
         "value": "$2.16 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "77% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "263 mentions",
@@ -340,7 +344,7 @@
         "label": "Give to UNHCR's Yemen appeal",
         "url": "https://donate.unhcr.org/int/en/yemen-emergency",
         "note": "The UN Refugee Agency, working in Yemen. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -353,25 +357,25 @@
       "need": {
         "value": "$4.06 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "65% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "534 mentions",
-        "n": 534,
+        "value": "646 mentions",
+        "n": 646,
         "source": "GDELT",
-        "date": "2026-11-26"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -380,29 +384,29 @@
       "country": "Somalia",
       "title": "Somalia",
       "text": "",
-      "score": 64,
+      "score": 63,
       "need": {
         "value": "$0.85 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "64% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "58 mentions",
-        "n": 58,
+        "value": "83 mentions",
+        "n": 83,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to WFP's Somalia hunger appeal",
         "url": "https://www.wfp.org/support-us/stories/somalia-hunger-appeal",
         "note": "The UN World Food Programme, the world's largest humanitarian agency, delivering emergency food, cash and nutrition support in Somalia. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -415,25 +419,25 @@
       "need": {
         "value": "$0.83 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "58% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "26 mentions",
-        "n": 26,
+        "value": "39 mentions",
+        "n": 39,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -446,12 +450,12 @@
       "need": {
         "value": "$0.58 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "70% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": null,
       "complete": false,
@@ -459,7 +463,7 @@
         "label": "Give to UNHCR's Sahel emergency appeal",
         "url": "https://donate.unhcr.org/africa/en/product/91",
         "note": "UNHCR's appeal for the central Sahel, which includes Mali. Your gift goes to shelter, relief items and protection for families forced from their homes. It is a regional appeal. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -468,16 +472,16 @@
       "country": "Honduras",
       "title": "Honduras",
       "text": "",
-      "score": 58,
+      "score": 59,
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "96% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "14 mentions",
@@ -490,7 +494,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -499,16 +503,16 @@
       "country": "Sudan",
       "title": "Sudan",
       "text": "In El Fasher, a city in North Darfur, civilians were cut off from food, water and medical care during a long siege by the Rapid Support Forces. The city fell in late October 2025. The war across Sudan is still going.",
-      "score": 57,
+      "score": 58,
       "need": {
         "value": "$2.87 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "49% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "175 mentions",
@@ -521,7 +525,69 @@
         "label": "Give to UNHCR's Sudan emergency",
         "url": "https://donate.unhcr.org/Sudan",
         "note": "The UN Refugee Agency, working inside Sudan and in the countries next door. Your gift goes to shelter, water and protection for families forced to flee the war. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
+      }
+    },
+    {
+      "no": 12,
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "title": "Myanmar",
+      "text": "",
+      "score": 57,
+      "need": {
+        "value": "$0.89 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-28"
+      },
+      "gap": {
+        "value": "48% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-28"
+      },
+      "media": {
+        "value": "64 mentions",
+        "n": 64,
+        "source": "GDELT",
+        "date": "2026-11-28"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Myanmar appeal",
+        "url": "https://donate.unhcr.org/myanmar",
+        "note": "The UN Refugee Agency, working in Myanmar. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-28"
+      }
+    },
+    {
+      "no": 13,
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "title": "Mozambique",
+      "text": "",
+      "score": 57,
+      "need": {
+        "value": "$0.53 billion asked",
+        "source": "OCHA FTS",
+        "date": "2026-11-28"
+      },
+      "gap": {
+        "value": "56% unfunded",
+        "source": "OCHA FTS",
+        "date": "2026-11-28"
+      },
+      "media": {
+        "value": "17 mentions",
+        "n": 17,
+        "source": "GDELT",
+        "date": "2026-11-28"
+      },
+      "complete": true,
+      "action": {
+        "label": "Give to UNHCR's Mozambique appeal",
+        "url": "https://donate.unhcr.org/int/en/mozambique-emergency",
+        "note": "The UN Refugee Agency, working in Mozambique. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
+        "verified": "2026-11-28"
       }
     },
     {
@@ -534,25 +600,25 @@
       "need": {
         "value": "$0.32 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "60% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "23 mentions",
-        "n": 23,
+        "value": "21 mentions",
+        "n": 21,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -565,87 +631,25 @@
       "need": {
         "value": "$0.88 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "47% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "36 mentions",
-        "n": 36,
+        "value": "47 mentions",
+        "n": 47,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to WFP's Haiti hunger appeal",
         "url": "https://www.wfp.org/support-us/stories/haiti",
         "note": "The UN World Food Programme, the world's largest humanitarian agency, delivering food aid and cash support in Haiti, where gangs and displacement are driving hunger. Your gift goes to food for families facing hunger. It covers hunger relief, not every need in the country.",
-        "verified": "2026-11-27"
-      }
-    },
-    {
-      "no": 12,
-      "iso3": "MMR",
-      "country": "Myanmar",
-      "title": "Myanmar",
-      "text": "",
-      "score": 56,
-      "need": {
-        "value": "$0.89 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-27"
-      },
-      "gap": {
-        "value": "48% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-27"
-      },
-      "media": {
-        "value": "70 mentions",
-        "n": 70,
-        "source": "GDELT",
-        "date": "2026-11-27"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give to UNHCR's Myanmar appeal",
-        "url": "https://donate.unhcr.org/myanmar",
-        "note": "The UN Refugee Agency, working in Myanmar. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
-      }
-    },
-    {
-      "no": 13,
-      "iso3": "MOZ",
-      "country": "Mozambique",
-      "title": "Mozambique",
-      "text": "",
-      "score": 56,
-      "need": {
-        "value": "$0.53 billion asked",
-        "source": "OCHA FTS",
-        "date": "2026-11-27"
-      },
-      "gap": {
-        "value": "56% unfunded",
-        "source": "OCHA FTS",
-        "date": "2026-11-27"
-      },
-      "media": {
-        "value": "15 mentions",
-        "n": 15,
-        "source": "GDELT",
-        "date": "2026-11-27"
-      },
-      "complete": true,
-      "action": {
-        "label": "Give to UNHCR's Mozambique appeal",
-        "url": "https://donate.unhcr.org/int/en/mozambique-emergency",
-        "note": "The UN Refugee Agency, working in Mozambique. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -654,16 +658,16 @@
       "country": "Venezuela, Bolivarian Republic of",
       "title": "Venezuela",
       "text": "",
-      "score": 52,
+      "score": 54,
       "need": {
         "value": "$0.93 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "49% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "137 mentions",
@@ -676,7 +680,7 @@
         "label": "Give to UNHCR's Venezuela appeal",
         "url": "https://donate.unhcr.org/int/en/venezuela-emergency",
         "note": "The UN Refugee Agency, working in Venezuela. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -689,12 +693,12 @@
       "need": {
         "value": "$0.26 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "41% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "4 mentions",
@@ -707,7 +711,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -716,29 +720,29 @@
       "country": "Bangladesh",
       "title": "Bangladesh",
       "text": "",
-      "score": 40,
+      "score": 41,
       "need": {
         "value": "$0.71 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "28% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "106 mentions",
-        "n": 106,
+        "value": "115 mentions",
+        "n": 115,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's Bangladesh appeal",
         "url": "https://donate.unhcr.org/int/en/rohingya-emergency",
         "note": "The UN Refugee Agency, supporting Rohingya refugees in Bangladesh. Your gift goes to shelter, relief items and protection for families who fled Myanmar. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -751,25 +755,25 @@
       "need": {
         "value": "$2.30 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "22% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "1,905 mentions",
-        "n": 1905,
+        "value": "2,243 mentions",
+        "n": 2243,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's Ukraine appeal",
         "url": "https://donate.unhcr.org/int/en/ukraine-emergency",
         "note": "The UN Refugee Agency, working in Ukraine. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -778,29 +782,29 @@
       "country": "Colombia",
       "title": "Colombia",
       "text": "",
-      "score": 38,
+      "score": 37,
       "need": {
         "value": "$0.62 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "51% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "204 mentions",
-        "n": 204,
+        "value": "240 mentions",
+        "n": 240,
         "source": "GDELT",
-        "date": "2026-11-26"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -813,25 +817,25 @@
       "need": {
         "value": "$0.06 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "91% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "334 mentions",
-        "n": 334,
+        "value": "341 mentions",
+        "n": 341,
         "source": "GDELT",
-        "date": "2026-11-26"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -844,25 +848,25 @@
       "need": {
         "value": "$0.07 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "6% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "11 mentions",
-        "n": 11,
+        "value": "14 mentions",
+        "n": 14,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -871,29 +875,29 @@
       "country": "Lebanon",
       "title": "Lebanon",
       "text": "",
-      "score": 35,
+      "score": 34,
       "need": {
         "value": "$0.64 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "46% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "169 mentions",
-        "n": 169,
+        "value": "193 mentions",
+        "n": 193,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give to UNHCR's Lebanon appeal",
         "url": "https://donate.unhcr.org/int/en/lebanon-emergency",
         "note": "The UN Refugee Agency, working in Lebanon. Your gift goes to shelter, relief items and protection for families forced from their homes. It covers displaced people, not every need in the country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -906,25 +910,25 @@
       "need": {
         "value": "$0.52 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "27% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "114 mentions",
-        "n": 114,
+        "value": "134 mentions",
+        "n": 134,
         "source": "GDELT",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -933,16 +937,16 @@
       "country": "Pakistan",
       "title": "Pakistan",
       "text": "",
-      "score": 27,
+      "score": 28,
       "need": {
         "value": "$0.06 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "54% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "232 mentions",
@@ -955,7 +959,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -968,12 +972,12 @@
       "need": {
         "value": "$0.08 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "47% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": null,
       "complete": false,
@@ -981,7 +985,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -994,12 +998,12 @@
       "need": {
         "value": "$0.08 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "44% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": null,
       "complete": false,
@@ -1007,7 +1011,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -1016,29 +1020,29 @@
       "country": "Nepal",
       "title": "Nepal",
       "text": "",
-      "score": 21,
+      "score": 20,
       "need": {
         "value": "$0.05 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "42% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
-        "value": "130 mentions",
-        "n": 130,
+        "value": "139 mentions",
+        "n": 139,
         "source": "GDELT",
-        "date": "2026-11-26"
+        "date": "2026-11-28"
       },
       "complete": true,
       "action": {
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     },
     {
@@ -1047,16 +1051,16 @@
       "country": "Sri Lanka",
       "title": "Sri Lanka",
       "text": "",
-      "score": 16,
+      "score": 17,
       "need": {
         "value": "$0.04 billion asked",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "gap": {
         "value": "6% unfunded",
         "source": "OCHA FTS",
-        "date": "2026-11-27"
+        "date": "2026-11-28"
       },
       "media": {
         "value": "87 mentions",
@@ -1069,7 +1073,7 @@
         "label": "Give through UN Crisis Relief",
         "url": "https://crisisrelief.un.org/donate",
         "note": "Run by OCHA, the UN humanitarian office. Gifts go to its pooled funds, which pay local and international aid groups. It is not tied to one named country.",
-        "verified": "2026-11-27"
+        "verified": "2026-11-28"
       }
     }
   ]
